@@ -47,7 +47,7 @@ const paises = [
      <div class="flex flex-wrap gap-4 justify-center py-8">
      <div class="text-cafeoscuro text-lg font-semibold mt-1">{t('apoyo.seleccionarPais', locale)}</div> {paises.map((pais) => (
       <button
-        hx-get={`../paises-parciales/${pais.id}`}
+        hx-get={`/paises-parciales/${pais.id}`}
         hx-target="#contenido-pais"
         hx-swap="innerHTML transition:true"
         class="px-4 py-2 bg-cafeoscuro text-white font-medium rounded-full hover:bg-cafemedio transition cursor-pointer"
