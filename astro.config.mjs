@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 import alpinejs from '@astrojs/alpinejs';
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
   i18n: {
@@ -14,12 +16,16 @@ export default defineConfig({
       prefixDefaultLocale: false
     },
   },
+
   vite: {
     plugins: [tailwindcss()]
   },
 
   integrations: [alpinejs()],
+
   redirects: {
     "/": "/es/",
   },
+
+  adapter: netlify(),
 });
