@@ -1,0 +1,81 @@
+---
+import { Image } from 'astro:assets';
+import Logoayudadefensores from '../assets/ayuda-defensores.png';
+import { getLocaleFromUrl, t, getLocaleUrl } from '../i18n/utils';
+
+const { currentPage = '' } = Astro.props;
+const locale = getLocaleFromUrl(Astro.url);
+
+const getLinkClass = (path: string) => {
+  const cleanPath = currentPage.replace(/^\/(es|pt)\//, '/');
+  const isActive = cleanPath === path || cleanPath.startsWith(path + '/');
+  return `font-normal text-sm transition delay-150 duration-300 ease-in-out ${isActive ? 'text-cafemedio' : 'text-cafeoscuro hover:text-cafemedio'}`;
+};
+
+const currentPath = currentPage.replace(/^\/(es|pt)\//, '/').replace(/^\/+/, '/') || '/';
+const esUrl = getLocaleUrl(currentPath, 'es');
+const ptUrl = getLocaleUrl(currentPath, 'pt');
+const homeUrl = locale === 'pt' ? '/pt/' : '/es/';
+---
+
+<header>
+  <nav x-data="{ open: false }"  class="flex h-auto w-auto py-6 bg-white rounded-lg justify-between
+    md:h-14 md:py-12">
+    <div class="flex w-full justify-between ">
+      <div :class="open ? 'hidden':'flex'" 
+        class="flex px-6 w-1/2 items-center font-semibold
+        md:w-1/5 md:px-1 md:flex md:items-center md:justify-center"
+        x-transition:enter="transition ease-out duration-300">
+        <a href={homeUrl}>
+          <Image src={Logoayudadefensores} alt="Logo Ayuda Defensores" class="md:h-12 h-auto w-auto" />
+        </a>
+      </div>
+
+      <div
+        x-show="open" x-transition:enter="transition ease-in-out duration-300"
+        class="flex flex-col w-full h-auto
+        md:hidden">
+        <div class="flex flex-col items-center gap-2">
+          <a href={homeUrl} class="font-normal text-md text-cafeoscuro hover:text-cafemedio">{t('nav.inicio', locale)}</a>
+          <a href={getLocaleUrl('/apoyo', locale)} class="font-normal text-sm text-cafeoscuro hover:text-cafemedio transition delay-150 duration-300 ease-in-out">{t('nav.apoyoPorPais', locale)}</a>
+          <a href={getLocaleUrl('/autoproteccion', locale)} class="font-normal text-sm text-cafeoscuro hover:text-cafemedio transition delay-150 duration-300 ease-in-out">{t('nav.autoproteccion', locale)}</a>
+          <a href={getLocaleUrl('/acompanamiento', locale)} class="font-normal text-sm text-cafeoscuro hover:text-cafemedio transition delay-150 duration-300 ease-in-out">{t('nav.acompanamiento', locale)}</a>
+          <a href={getLocaleUrl('/escazu', locale)} class="font-normal text-sm text-cafeoscuro hover:text-cafemedio transition delay-150 duration-300 ease-in-out">{t('nav.escazu', locale)}</a>
+          <div class="flex items-center gap-2 mt-2">
+            <a href={esUrl} class={`text-sm ${locale === 'es' ? 'text-cafemedio font-bold' : 'text-cafeoscuro hover:text-cafemedio'}`}>ES</a>
+            <span class="text-cafeoscuro">|</span>
+            <a href={ptUrl} class={`text-sm ${locale === 'pt' ? 'text-cafemedio font-bold' : 'text-cafeoscuro hover:text-cafemedio'}`}>PT</a>
+          </div>
+          <button class="bg-cafemedio text-white text-sm font-bold px-4 py-2 rounded-full hover:bg-cafeoscuro transition delay-150 duration-300 ease-in-out">{t('nav.protegete', locale)}</button>
+        </div>
+      </div>
+      <div class="hidden w-full items-center md:gap-12 font-semibold
+        md:flex md:w-3/5 md:justify-center">
+        <a href={homeUrl} class={getLinkClass('/')}>{t('nav.inicio', locale)}</a>
+        <a href={getLocaleUrl('/apoyo', locale)} class={getLinkClass('/apoyo')}>{t('nav.apoyoPorPais', locale)}</a>
+        <a href={getLocaleUrl('/autoproteccion', locale)} class={getLinkClass('/autoproteccion')}>{t('nav.autoproteccion', locale)}</a>
+        <a href={getLocaleUrl('/acompanamiento', locale)} class={getLinkClass('/acompanamiento')}>{t('nav.acompanamiento', locale)}</a>
+        <a href={getLocaleUrl('/escazu', locale)} class={getLinkClass('/escazu')}>{t('nav.escazu', locale)}</a>
+      </div>
+      <div class="hidden w-1/5 items-center justify-evenly font-semibold
+        md:flex">
+        <div class="flex items-center gap-2">
+          <a href={esUrl} class={`text-sm ${locale === 'es' ? 'text-cafemedio font-bold' : 'text-cafeoscuro hover:text-cafemedio'}`}>ES</a>
+          <span class="text-cafeoscuro">|</span>
+          <a href={ptUrl} class={`text-sm ${locale === 'pt' ? 'text-cafemedio font-bold' : 'text-cafeoscuro hover:text-cafemedio'}`}>PT</a>
+        </div>
+        <button class="bg-cafemedio text-white text-sm font-bold px-4 py-2 rounded-full hover:bg-cafeoscuro transition delay-150 duration-300 ease-in-out">{t('nav.protegete', locale)}</button>
+      </div>
+      <button class="text-gray-500 w-10 h-10 relative focus:outline-none bg-white
+        md:hidden
+        " @click="open = !open">
+        <span class="sr-only">Open main menu</span>
+        <div class="block w-5 absolute left-1/2 top-1/2   transform  -translate-x-1/2 -translate-y-1/2">
+          <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+          <span aria-hidden="true" class="block absolute  h-0.5 w-5 bg-current   transform transition duration-500 ease-in-out" :class="{'opacity-0': open } "></span>
+          <span aria-hidden="true" class="block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out" :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+</header>

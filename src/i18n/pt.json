@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "inicio": "Início",
+    "apoyoPorPais": "Apoio por país",
+    "autoproteccion": "Autoproteção",
+    "acompanamiento": "Acompanhamento",
+    "escazu": "Escazú",
+    "protegete": "PROTEJA-SE"
+  },
+  "footer": {
+    "newsletter": {
+      "titulo": "Assine a Newsletter",
+      "subtitulo": "de Democracia Ambiental",
+      "placeholder": "Digite seu e-mail aqui",
+      "suscribirse": "assinar"
+    },
+    "contacto": "contato@ayudadefensores.org",
+    "proyectoDe": "Um projeto de",
+    "copyright": "Ajuda Defensores da Ciudadanía Inteligente | 2026 Todos os direitos reservados"
+  },
+  "index": {
+    "banner": {
+      "subtitulo": "Uma plataforma de apoio para pessoas",
+      "titulo": "DEFENSORES",
+      "subtitulo2": "ambientais na América Latina e no Caribe",
+      "boton": "Buscar Ajuda"
+    },
+    "ayuda": {
+      "titulo": "Você precisa",
+      "titulo2": "AJUDA?",
+      "descripcion": "Se você enfrenta riscos, ameaças ou assédio por defender o meio ambiente, aqui você pode encontrar apoio, informações confiáveis e redes que podem ajudá-lo."
+    },
+    "queEs": {
+      "titulo": "O que é Ajuda",
+      "titulo2": "DEFENSORES?",
+      "descripcion1": "Ajuda Defensores é um primeiro ponto de contato confiável para",
+      "descripcion2": "pessoas que defendem o meio ambiente e enfrentam riscos na região.",
+      "queremos": "Reúne num só lugar:",
+      "segura": "Informação clara e atualizada",
+      "conectada": "Ferramentas práticas de segurança",
+      "respaldada": "Redes e organizações de apoio"
+    },
+    "escazu": {
+      "titulo": "Infórmate sobre el",
+      "titulo2": "ACUERDO DE ESCAZÚ",
+      "titulo3": "Conoce por qué es clave para personas defensoras y revisa información actualizada a nivel regional.",
+      "boton": "Revisar información"
+    },
+    "quien": {
+      "titulo": "Quem",
+      "titulo2": "IMPULSA?",
+      "proyectode": "Um projeto de:",
+      "boton": "Ir para Ciudadanía Inteligente"
+    }
+  },
+  "apoyo": {
+    "titulo": "APOIO ESTATAL",
+    "descripcion": "Aqui você encontrará programas, mecanismos e entidades públicas que podem oferecer apoio ou proteção a pessoas defensoras do meio ambiente em cada país.",
+    "seleccionarPais": "SELECIONAR PAÍS:"
+  },
+  "autoproteccion": {
+    "titulo": "AUTOPROTEÇÃO",
+    "descripcion": "Você encontrará várias ferramentas de autoproteção para defensores ambientais em segurança digital, bem-estar psicossocial, proteção física e comunitária."
+  },
+  "acompanamiento": {
+    "titulo": "ACOMPANHAMENTO",
+    "descripcion": "Conheça as organizações nacionais, regionais e globais que acompanham e apoiam pessoas defensoras ambientais na América Latina e no Caribe."
+  },
+  "escazu": {
+    "titulo": "ACORDO DE ESCAZÚ",
+    "descripcion": "O Acordo de Escazú é o primeiro tratado vinculante sobre democracia ambiental na América Latina e no Caribe."
+  },
+  "pais": {
+    "mexico": {
+      "titulo": "MÉXICO",
+      "descripcion": "Conta com um mecanismo de proteção para pessoas defensoras de direitos humanos e jornalistas.",
+      "direccion": "Endereço: Calle Dinamarca número 84, andar 7, colônia Juárez, Delegación Cuauhtémoc, Cidade do México. C. P. 06600.",
+      "telefono": "Telefone: 01 800 800 40 50 chamada sem custo - 01 55 5209 88 00 ramal 30863",
+      "correo": "E-mail: mecanismo@segob.gob.mx",
+      "accionEstatal": "Ação estatal e entidades de apoio no México:"
+    },
+    "chile": {
+      "titulo": "Chile",
+      "descripcion": "Informações de recursos e apoio para defensores ambientais no Chile.",
+      "item1": "Organizações locais de apoio",
+      "item2": "Protocolos de proteção",
+      "item3": "Ferramentas de autoproteção",
+      "item4": "Redes de acompanhamento"
+    },
+    "argentina": {
+      "titulo": "Argentina",
+      "descripcion": "Informações de recursos e apoio para defensores ambientais na Argentina.",
+      "item1": "Organizações locais de apoio",
+      "item2": "Protocolos de proteção",
+      "item3": "Ferramentas de autoproteção",
+      "item4": "Redes de acompanhamento"
+    },
+    "bolivia": {
+      "titulo": "Bolívia",
+      "descripcion": "Informações de recursos e apoio para defensores ambientais na Bolívia.",
+      "item1": "Organizações locais de apoio",
+      "item2": "Protocolos de proteção",
+      "item3": "Ferramentas de autoproteção",
+      "item4": "Redes de acompanhamento"
+    },
+    "peru": {
+      "titulo": "Peru",
+      "descripcion": "Informações de recursos e apoio para defensores ambientais no Peru.",
+      "item1": "Organizações locais de apoio",
+      "item2": "Protocolos de proteção",
+      "item3": "Ferramentas de autoproteção",
+      "item4": "Redes de acompanhamento"
+    }
+  }
+}

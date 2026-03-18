@@ -1,0 +1,114 @@
+---
+import { t } from '../../i18n/utils.ts';
+import Accordion from '../../components/Accordion.astro';
+
+const url = Astro.url.pathname;
+const locale = url.includes('/pt/') ? 'pt' : 'es';
+
+const ubicaciones = [
+  {
+    id: 'aguascalientes',
+    titulo: 'Aguascalientes',
+    contenido: `
+<!-- información 1 -->
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos:</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: Perú 502, Fracc. Jardines de Santa Elena, Col. República de Perú # 502 C.P: 20236, Ags. México.<br/>
+        Teléfono:<br/>
+        01(449) 1407855<br/>
+        01(449) 140 7860<br/>
+        01(449) 804 0165<br/>
+        Correo: <a href="mailto:correo@dhags.org" class="text-white underline">correo@dhags.org</a>
+      </p>
+<hr class="my-4 border-gray-300">
+<!-- información 2 -->
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Especial de Derechos Humanos:</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: Perú 502, Fracc. Jardines de Santa Elena, Col. República de Perú # 502 C.P: 20236, Ags. México.<br/>
+        Teléfono:<br/>
+        01(449) 1407855<br/>
+        01(449) 140 7860<br/>
+        01(449) 804 0165<br/>
+        Correo: <a href="mailto:correo@dhags.org" class="text-white underline">correo@dhags.org</a>
+      </p>
+    `
+  },
+  {
+    id: 'cdmx',
+    titulo: 'Ciudad de México',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión de Derechos Humanos de la Ciudad de México:</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: Av. Universidad #1449, PB, Col. Del Valle, Benito Juárez, Ciudad de México.<br/>
+        Teléfono:<br/>
+        01(55) 5209 8800<br/>
+        Correo: <a href="mailto:cdhcdmx@cdhcm.org" class="text-white underline">cdhcdmx@cdhcm.org</a>
+      </p>
+    `
+  },
+  {
+    id: 'guadalajara',
+    titulo: 'Jalisco (Guadalajara)',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos de Jalisco:</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: Pedro Moreno #1615, Col. Americana, Guadalajara, Jalisco.<br/>
+        Teléfono:<br/>
+        01(33) 3669 7000<br/>
+        Correo: <a href="mailto:contacto@cedhj.org.mx" class="text-white underline">contacto@cedhj.org.mx</a>
+      </p>
+    `
+  },
+  {
+    id: 'monterrey',
+    titulo: 'Nuevo León (Monterrey)',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión de Derechos Humanos de Nuevo León:</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: Alfonso Reyes #1500, Col. Mitras Centro, Monterrey, N.L.<br/>
+        Teléfono:<br/>
+        01(81) 2020 5000<br/>
+        Correo: <a href="mailto:cdhnl@cdhnl.gob.mx" class="text-white underline">cdhnl@cdhnl.gob.mx</a>
+      </p>
+    `
+  },
+  {
+    id: 'puebla',
+    titulo: 'Puebla',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión de Derechos Humanos de Puebla:</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: 11 Sur #1104, Col. Centro Histórico, Puebla, Puebla.<br/>
+        Teléfono:<br/>
+        01(222) 229 9000<br/>
+        Correo: <a href="mailto:cdhpuebla@cdhpuebla.org.mx" class="text-white underline">cdhpuebla@cdhpuebla.org.mx</a>
+      </p>
+    `
+  }
+];
+---
+
+<div class="p-6 bg-white">
+  <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-2 p-12">
+    <h2 class="text-5xl md:text-7xl text-right font-extrabold text-cafemedio">{t('pais.mexico.titulo', locale)}</h2>
+    <div class="md:ml-12 md:mr-22 text-cafeoscuro text-[16px]">
+      <p class="mb-2 font-bold">{t('pais.mexico.descripcion', locale)}</p>
+      <p class="mb-2">{t('pais.mexico.direccion', locale)}</p>
+      <p class="mb-2">{t('pais.mexico.telefono', locale)}</p>
+      <p>{t('pais.mexico.correo', locale)}</p>
+    </div>
+  </div>
+  <p class="text-center mt-10 uppercase text-cafeoscuro font-bold">{t('pais.mexico.accionEstatal', locale)}</p>
+  
+  <div class="container max-w-4xl mx-auto px-4 mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+      {ubicaciones.map((ubicacion) => (
+        <Accordion 
+          id={ubicacion.id}
+          title={ubicacion.titulo}
+          content={ubicacion.contenido}
+        />
+      ))}
+    </div>
+  </div>
+</div>

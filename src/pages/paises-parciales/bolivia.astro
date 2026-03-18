@@ -1,0 +1,71 @@
+---
+import { t } from '../../i18n/utils.ts';
+import Accordion from '../../components/Accordion.astro';
+
+const url = Astro.url.pathname;
+const locale = url.includes('/pt/') ? 'pt' : 'es';
+
+const ubicaciones = [
+  {
+    id: 'lapaz',
+    titulo: 'La Paz',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Defensoría del Pueblo de Bolivia:</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: Calle排水系统 #0908, Edif. Havanna, Piso 3, La Paz.<br/>
+        Teléfono:<br/>
+        +591 2 211 4000<br/>
+        Correo: <a href="mailto:defensoria@defensoria.gob.bo" class="text-white underline">defensoria@defensoria.gob.bo</a>
+      </p>
+    `
+  },
+  {
+    id: 'santacruz',
+    titulo: 'Santa Cruz de la Sierra',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Defensoría del Pueblo - Oficina Regional Santa Cruz:</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: Calle Beni #415, entre Monseñor Rivero y Germán Busch, Santa Cruz.<br/>
+        Teléfono:<br/>
+        +591 3 336 0000<br/>
+        Correo: <a href="mailto:defensoria.scz@defensoria.gob.bo" class="text-white underline">defensoria.scz@defensoria.gob.bo</a>
+      </p>
+    `
+  },
+  {
+    id: 'cochabamba',
+    titulo: 'Cochabamba',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Defensoría del Pueblo - Oficina Regional Cochabamba:</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: Av. Libertador #100, Edif. Centro Comercial, Piso 4, Cochabamba.<br/>
+        Teléfono:<br/>
+        +591 4 458 0000<br/>
+        Correo: <a href="mailto:defensoria.cba@defensoria.gob.bo" class="text-white underline">defensoria.cba@defensoria.gob.bo</a>
+      </p>
+    `
+  }
+];
+---
+
+<div class="p-6 bg-white">
+  <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-2 p-12">
+    <h2 class="text-5xl md:text-7xl text-right font-extrabold text-cafemedio">{t('pais.bolivia.titulo', locale)}</h2>
+    <div class="md:ml-12 md:mr-22 text-cafeoscuro text-[16px]">
+      <p class="mb-2 font-bold">{t('pais.bolivia.descripcion', locale)}</p>
+    </div>
+  </div>
+  <p class="text-center mt-10 uppercase text-cafeoscuro font-bold">Acción estatal y entidades de apoyo en Bolivia:</p>
+  
+  <div class="container max-w-4xl mx-auto px-4 mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+      {ubicaciones.map((ubicacion) => (
+        <Accordion 
+          id={ubicacion.id}
+          title={ubicacion.titulo}
+          content={ubicacion.contenido}
+        />
+      ))}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  content: string;
+  id: string;
+}
+
+const { title, subtitle, content, id } = Astro.props;
+---
+
+<div class="w-full bg-verde rounded-[20px] mb-2 overflow-hidden" x-data="{ open: false }">
+  <button 
+    @click="open = !open"
+    class="w-full p-2 md:pl-2 flex flex-col items-start justify-start rounded-[20px] focus:outline-none transition-colors cursor-pointer"
+    :class="open ? 'bg-verde/40' : 'bg-verde/20 hover:bg-verde/30'"
+  >
+    <div class="w-full flex justify-between items-center">
+      <span class="text-white text-base font-black font-['Geologica'] leading-5 p-3">{title}</span>
+      <svg 
+        class="w-6 h-6 text-white transition-transform duration-300" 
+        :class="open ? 'rotate-180' : ''"
+        fill="none" 
+        stroke="currentColor" 
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+    {subtitle && (
+      <span class="text-stone-600 text-lg font-bold font-['Geologica'] leading-6 mt-1">{subtitle}</span>
+    )}
+  </button>
+  
+  <div 
+    x-show="open"
+    x-collapse
+    class="px-4 pb-4 overflow-hidden"
+  >
+    <div class="text-stone-600 text-lg font-normal font-['Geologica'] leading-6" set:html={content} />
+  </div>
+</div>
+
+<style>
+[x-cloak] {
+  display: none !important;
+}
+</style>

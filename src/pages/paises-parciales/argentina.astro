@@ -1,0 +1,71 @@
+---
+import { t } from '../../i18n/utils.ts';
+import Accordion from '../../components/Accordion.astro';
+
+const url = Astro.url.pathname;
+const locale = url.includes('/pt/') ? 'pt' : 'es';
+
+const ubicaciones = [
+  {
+    id: 'caba',
+    titulo: 'Ciudad Autónoma de Buenos Aires',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Defensoría del Pueblo de la Ciudad de Buenos Aires:</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: Uruguay #740, CABA.<br/>
+        Teléfono:<br/>
+        +54 11 4339-0800<br/>
+        Correo: <a href="mailto:consultas@defensoria.org.ar" class="text-white underline">consultas@defensoria.org.ar</a>
+      </p>
+    `
+  },
+  {
+    id: 'cordoba',
+    titulo: 'Córdoba',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Defensoría del Pueblo de Córdoba:</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: Buenos Aires #104, Córdoba Capital.<br/>
+        Teléfono:<br/>
+        +54 351 434-2000<br/>
+        Correo: <a href="mailto:defensor@defensorcordoba.org.ar" class="text-white underline">defensor@defensorcordoba.org.ar</a>
+      </p>
+    `
+  },
+  {
+    id: 'mendoza',
+    titulo: 'Mendoza',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Defensoría del Pueblo de Mendoza:</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: Patricias Mendocinas #277, Mendoza.<br/>
+        Teléfono:<br/>
+        +54 261 420-2800<br/>
+        Correo: <a href="mailto:info@defensoriamendoza.org.ar" class="text-white underline">info@defensoriamendoza.org.ar</a>
+      </p>
+    `
+  }
+];
+---
+
+<div class="p-6 bg-white">
+  <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-2 p-12">
+    <h2 class="text-5xl md:text-7xl text-right font-extrabold text-cafemedio">{t('pais.argentina.titulo', locale)}</h2>
+    <div class="md:ml-12 md:mr-22 text-cafeoscuro text-[16px]">
+      <p class="mb-2 font-bold">{t('pais.argentina.descripcion', locale)}</p>
+    </div>
+  </div>
+  <p class="text-center mt-10 uppercase text-cafeoscuro font-bold">Acción estatal y entidades de apoyo en Argentina:</p>
+  
+  <div class="container max-w-4xl mx-auto px-4 mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+      {ubicaciones.map((ubicacion) => (
+        <Accordion 
+          id={ubicacion.id}
+          title={ubicacion.titulo}
+          content={ubicacion.contenido}
+        />
+      ))}
+    </div>
+  </div>
+</div>

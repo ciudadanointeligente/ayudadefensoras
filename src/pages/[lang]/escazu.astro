@@ -1,0 +1,36 @@
+---
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'pt' } },
+  ];
+}
+
+import Layout from '../../layouts/Layout.astro';
+import { t } from '../../i18n/utils.ts';
+
+const { lang } = Astro.params;
+const locale = lang === 'pt' ? 'pt' : 'es';
+const homeUrl = locale === 'pt' ? '/pt/' : '/';
+---
+
+<Layout title={t('nav.escazu', locale)}>
+
+  <!-- Barra inicial -->
+  <section class="flex w-full h-auto md:h-60 bg-[url(/bg-ayudadefensores.png)] bg-cover relative py-2 md:py-0">
+    <div class="absolute inset-0 bg-cover -z-10"></div>
+    <div class="w-full px-4 flex flex-col items-center gap-4 pt-16 pb-6 md:hidden">
+      <span class="w-fit inline-block rounded-2xl px-4 py-1 bg-white text-verde text-[12px] font-medium uppercase"><a href={homeUrl} class="hover:text-cafemedio">{t('nav.inicio', locale)}</a> / {t('nav.escazu', locale)}</span>
+      <h1 class="text-3xl font-extrabold text-cafemedio text-center">SOBRE {t('nav.escazu', locale).toUpperCase()}</h1>
+      <p class="text-cafeoscuro text-base font-medium text-center leading-relaxed">{t('escazu.descripcion', locale)}</p>
+    </div>
+    <div class="hidden md:flex absolute md:left-[150px] md:mt-4 top-1/3 -translate-y-1/2 w-[calc(100%-150px)] pr-8 flex flex-col gap-8">
+      <span class="w-fit inline-block rounded-2xl px-4 py-1 bg-white text-verde text-[12px] font-medium uppercase"><a href={homeUrl} class="hover:text-cafemedio">{t('nav.inicio', locale)}</a> / {t('nav.escazu', locale)}</span>
+      <div class="flex items-start">
+        <h1 class="text-6xl font-extrabold text-cafemedio w-[450px] flex-shrink-0 whitespace-nowrap">SOBRE {t('nav.escazu', locale).toUpperCase()}</h1>
+        <p class="text-cafeoscuro text-lg font-medium max-w-2xl text-left leading-relaxed ml-[300px]">{t('escazu.descripcion', locale)}</p>
+      </div>
+    </div>
+  </section>
+
+</Layout>
