@@ -7,6 +7,7 @@ export function getStaticPaths() {
 }
 
 import Layout from '../../layouts/Layout.astro';
+import shieldIcon from '../../assets/shield.webp';
 import { t } from '../../i18n/utils.ts';
 
 const { lang } = Astro.params;
@@ -29,6 +30,144 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
       <div class="flex items-start">
         <h1 class="text-6xl font-extrabold text-cafemedio w-[450px] flex-shrink-0 whitespace-nowrap">{t('autoproteccion.titulo', locale)}</h1>
         <p class="text-cafeoscuro text-lg font-medium max-w-2xl text-left leading-relaxed ml-[300px]">{t('autoproteccion.descripcion', locale)}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Texto principal -->
+  <section class="mt-12 md:mt-16 flex justify-center">
+    <div class="text-center">
+      <div class="text-stone-600 text-3xl md:text-5xl font-medium font-['Geologica'] md:leading-10">Herramientas de</div>
+      <div class="text-cafemedio text-3xl md:text-7xl font-extrabold font-['Geologica'] uppercase md:leading-[77.49px]">autoprotección</div>
+    </div>
+  </section>
+
+  <!-- Shields -->
+  <section class="mt-12 md:mt-12 flex justify-center">
+    <div class="container max-w-8xl mx-auto px-4">
+      <div class="flex flex-col flex-wrap md:flex-row place-content-center gap-8">
+        <div class="w-80 h-auto bg-amarillo rounded-xl relative mt-12">
+          <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-14 h-14 bg-amarillo rounded-full flex items-center justify-center">
+            <img src={shieldIcon.src} alt="Shield" class="w-10 h-10" />
+          </div>
+          <div class="mt-6 mb-6 px-4 text-center text-cafeoscuro">
+            <h3 class="text-lg font-bold uppercase">AUTOPROTECCIÓN DIGITAL</h3>
+          </div>
+        </div>
+        <div class="w-80 h-auto bg-cafeoscuro rounded-xl relative mt-12">
+          <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-14 h-14 bg-cafeoscuro rounded-full flex items-center justify-center">
+            <img src={shieldIcon.src} alt="Shield" class="w-10 h-10 brightness-250" />
+          </div>
+          <div class="mt-6 mb-6 px-4 text-center text-amarillo">
+            <h3 class="text-lg font-bold uppercase">AUTOPROTECCIÓN FÍSICA Y COMUNITARIA</h3>
+          </div>
+        </div>
+        <div class="w-80 h-auto bg-cafeoscuro rounded-xl relative mt-12">
+          <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-14 h-14 bg-cafeoscuro rounded-full flex items-center justify-center">
+            <img src={shieldIcon.src} alt="Shield" class="w-10 h-10 brightness-250" />
+          </div>
+          <div class="mt-6 mb-6 px-4 text-center text-amarillo">
+            <h3 class="text-lg font-bold uppercase">AUTOPROTECCIÓN PSICOSOCIAL</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido principal dos columnas -->
+  <section class="mt-16 md:mt-32 pb-16 md:pb-32 flex justify-center">
+    <div class="container max-w-8xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row gap-16">
+        <!-- Columna izquierda -->
+        <div class="w-full md:w-[45%]">
+          <div class="text-center md:text-left text-stone-600 text-base md:text-xl font-black font-['Geologica'] leading-5 md:leading-6">Seguridad</div>
+          <div class="text-center md:text-left text-cafemedio text-4xl md:text-7xl font-black font-['Geologica'] uppercase leading-tight md:leading-[77.49px]">digital</div>
+          <div class="text-center md:text-left text-stone-600 text-sm md:text-xl font-normal font-['Geologica'] leading-5 md:leading-6 mt-2 md:mt-0">Acciones simples y efectivas para rescindar tus datos, comunicaciones y fortalecer tu seguridad digital.</div>
+          <div class="text-center md:text-left text-stone-600 text-base md:text-xl font-black font-['Geologica'] uppercase leading-5 md:leading-6 mt-6 md:mt-8">Recursos útiles:</div>
+          
+          <div class="mt-2 md:mt-4 space-y-3 md:space-y-4">
+            <div class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 md:size-6 text-cafemedio flex-shrink-0">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+              <a href="https://securityinabox.org/es/" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Plataforma de Recursos de Seguridad Digital para la Sociedad Civil</a>
+            </div>
+            
+            <div class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 md:size-6 text-cafemedio flex-shrink-0">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+              <a href="https://www.openbriefing.org/holistic-security/" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Open Briefing – Protocolo de Seguridad Holística</a>
+            </div>
+            
+            <div class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 md:size-6 text-cafemedio flex-shrink-0">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+              <a href="https://www.digitalfirstaid.org/es/" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Kit de Primeros Auxilios Digitales (Digital First Aid Kit)</a>
+            </div>
+            
+            <div class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 md:size-6 text-cafemedio flex-shrink-0">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+              <div>
+                <a href="https://www.ciudadaniai.org/publicaciones/manual-de-seguridad-digital" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Manual de seguridad digital</a>
+                <span class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] leading-5"> de Ciudadanía Inteligente</span>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 md:size-6 text-cafemedio flex-shrink-0">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+              <div>
+                <a href="https://conexo.es/seguridad-digital-concepto-y-herramientas-basicas/" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Seguridad digital: Concepto y herramientas básicas</a>
+                <span class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] leading-5"> (Conexo)</span>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 md:size-6 text-cafemedio flex-shrink-0">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+              <div>
+                <a href="https://www.ciudadaniai.org/publicaciones/tip-plataformas-y-aplicaciones-mas-seguras-para-activistas" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Tip: Plataformas y aplicaciones más seguras para activistas</a>
+                <span class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] leading-5"> (Ciudadanía Inteligente)</span>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 md:size-6 text-cafemedio flex-shrink-0">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+              <div>
+                <a href="https://www.ciudadaniai.org/publicaciones/manual-de-activismo-digital" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Manual de activismo digital</a>
+                <span class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] leading-5"> (Ciudadanía Inteligente)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="w-full md:w-[55%] mt-8 md:mt-0">
+          <div class="text-center md:text-left text-stone-600 text-xl md:text-2xl font-medium font-['Geologica']">Recomendaciones</div>
+          <div class="text-center md:text-left text-verde text-3xl md:text-6xl font-extrabold font-['Geologica'] uppercase leading-tight md:leading-none mt-1 md:mt-0">principales</div>
+          <div class="w-full h-auto bg-lime-200/30 rounded-xl md:rounded-[19.83px] p-4 md:p-6 mt-3 md:mt-4">
+            <ul class="text-stone-600 text-sm md:text-lg font-normal font-['Geologica'] leading-5 md:leading-6 list-disc list-inside space-y-2 md:space-y-3">
+              <li>Usa contraseñas seguras y únicas; activa la verificación en dos pasos.</li>
+              <li>Cambia tus claves de forma periódica.</li>
+              <li>Evita redes WiFi públicas; conéctate solo a redes de confianza.</li>
+              <li>Mantén bloqueados tus dispositivos cuando no estén en uso.</li>
+              <li>Sé cuidadosa/o con lo que compartes en redes; evita publicar tu ubicación.</li>
+              <li>Define reglas internas para el manejo de información sensible.</li>
+              <li>Controla quién tiene acceso a ciertos archivos o plataformas; revisa permisos regularmente.</li>
+              <li>Usa plataformas seguras para coordinar y compartir información.</li>
+              <li>Mantén copias de seguridad con acceso restringido.</li>
+              <li>Define pasos claros frente a robos, hackeos o pérdida de información.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>

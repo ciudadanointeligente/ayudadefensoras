@@ -142,3 +142,126 @@ const url = getLocaleUrl('/ruta', locale);
 - Redirección `/` -> `/es/` configurada en `astro.config.mjs`
 - No hay tests configurados actualmente
 - Configuración de VSCode disponible en `.vscode/`
+
+
+
+
+### Sección Autoprotección
+
+La sección de Autoprotección del sitio está formada por tres páginas:
+- Autoprotección digital (autoproteccion.astro)(coincide con la sección principal de autoproteccion)
+- Autoprotección física y comunitaria (autoproteccionfisica.astro)
+- Autoprotección psicosocial (autoproteccionpsicosocial.astro)
+
+Las tres páginas deben tener integrado el Layout del sitio.
+
+En las tres páginas va este texto debajo de la barra principal:
+<div class="w-96 h-14 text-center justify-start text-stone-600 text-5xl font-medium font-['Geologica'] leading-10">Herramientas de</div>
+<div class="text-center justify-start text-amber-600 text-7xl font-extrabold font-['Geologica'] uppercase leading-[77.49px]">autoprotección</div>
+
+Este es el contenido de cada página:
+
+#### Autoprotección digital
+
+Luego del texto principal vienen los 3 cuadros con Shields, como los que están en index.astro:
+  <!-- Shields -->
+  <section class="mt-12 md:mt-12 flex justify-center">
+    <div class="container max-w-6xl mx-auto px-4">
+      <div class="flex flex-col flex-wrap md:flex-row place-content-center gap-8">
+        <div class="w-80 h-auto bg-amarillo rounded-xl relative mt-12">
+          <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-amarillo rounded-full flex items-center justify-center">
+            <img src={shieldIcon.src} alt="Shield" class="w-16 h-16" />
+          </div>
+          <div class="mt-12 px-4 text-center text-cafeoscuro">
+            <h3 class="text-lg font-bold uppercase">APOYO ESTATAL</h3>
+            <p class="text-md mt-2 mx-6 pb-10">Conoce los mecanismos institucionales y programas de protección disponibles en tu país.</p>
+          </div>
+        </div>
+        <div class="w-80 h-auto bg-verde rounded-xl relative mt-12">
+          <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-verde rounded-full flex items-center justify-center">
+            <img src={shieldIcon.src} alt="Shield" class="w-16 h-16 invert brightness-20" />
+          </div>
+          <div class="mt-12 px-4 text-center text-white">
+            <h3 class="text-lg font-bold uppercase">AUTOPROTECCIÓN</h3>
+            <p class="text-md mt-2 mx-6 pb-10">Herramientas de autoprotección digital, física, comunitaria y psicosocial para prevenir riesgos.</p>
+          </div>
+        </div>
+        <div class="w-80 h-auto bg-cafemedio rounded-xl relative mt-12">
+          <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-cafemedio rounded-full flex items-center justify-center">
+            <img src={shieldIcon.src} alt="Shield" class="w-16 h-16 invert brightness-20" />
+          </div>
+          <div class="mt-12 px-4 text-center text-white">
+            <h3 class="text-lg font-bold uppercase">ACOMPAÑAMIENTO</h3>
+            <p class="text-md mt-2 mx-6 pb-10">Organizaciones nacionales y regionales que acompañan a personas defensoras y pueden orientarte.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+Pero con el texto de las tres páginas: 
+digital, física y comunitaria y psicosocial
+
+El cuadro de la página que corresponde, en este caso Autoprotección digital, debe ser en --color-amarillo: #F7CB67; y el texto en x1, negrita y alta de   --color-cafeoscuro: #655846;
+
+Los otros dos cuadros deben ser al revés.
+
+#### Contenido que cambia en cada página
+
+Luego viene la sección principal de cada página donde están los contenidos. Esta sección está dividida en dos columnas de aprox. 40% y 60%.
+
+En la columna izquierda (40%) va el siguiente contenido:
+<div class="w-32 h-4 text-center justify-center text-stone-600 text-xl font-black font-['Geologica'] leading-6">Seguridad</div>
+<div class="w-96 h-24 justify-start text-amber-600 text-7xl font-black font-['Geologica'] uppercase leading-[77.49px]">digital</div>
+<div class="w-[461px] justify-start text-stone-600 text-xl font-normal font-['Geologica'] leading-6">Acciones simples y efectivas para resguardar tus datos, comunicaciones y fortalecer tu seguridad digital.</div>
+<div class="w-96 justify-start text-stone-600 text-xl font-black font-['Geologica'] uppercase leading-6">Recursos útiles:</div>
+<div class="size-9 relative">
+    <div class="w-3.5 h-4 left-[11.08px] top-[21.58px] absolute origin-top-left -rotate-90 border-[3.25px] border-amber-600"></div>
+    <div class="w-6 h-1 left-[7.92px] top-[24.67px] absolute rounded-sm border-[3.25px] border-amber-600"></div>
+</div>
+<div class="w-96 h-9 justify-start text-amber-600 text-lg font-bold font-['Geologica'] underline leading-6">Plataforma de Recursos de Seguridad Digital para la Sociedad Civil</div>
+
+<div class="size-9 relative">
+    <div class="w-3.5 h-4 left-[11.08px] top-[21.58px] absolute origin-top-left -rotate-90 border-[3.25px] border-amber-600"></div>
+    <div class="w-6 h-1 left-[7.92px] top-[24.67px] absolute rounded-sm border-[3.25px] border-amber-600"></div>
+</div>
+<div class="w-96 h-11 justify-start text-amber-600 text-lg font-bold font-['Geologica'] underline leading-6">Open Briefing – Protocolo de Seguridad Holística</div>
+
+<div class="size-9 relative">
+    <div class="w-3.5 h-4 left-[11.08px] top-[21.58px] absolute origin-top-left -rotate-90 border-[3.25px] border-amber-600"></div>
+    <div class="w-6 h-1 left-[7.92px] top-[24.67px] absolute rounded-sm border-[3.25px] border-amber-600"></div>
+</div>
+<div class="w-96 h-10 justify-start text-amber-600 text-lg font-bold font-['Geologica'] underline leading-6">Kit de Primeros Auxilios Digitales (Digital First Aid Kit)</div>
+
+<div class="size-9 relative">
+    <div class="w-3.5 h-4 left-[11.08px] top-[21.58px] absolute origin-top-left -rotate-90 border-[3.25px] border-amber-600"></div>
+    <div class="w-6 h-1 left-[7.92px] top-[24.67px] absolute rounded-sm border-[3.25px] border-amber-600"></div>
+</div>
+<div class="w-96 h-10 justify-start"><span class="text-amber-600 text-lg font-bold font-['Geologica'] underline leading-6">Manual de seguridad digital</span><span class="text-amber-600 text-lg font-bold font-['Geologica'] leading-6"> <br/>de Ciudadanía Inteligente</span></div>
+
+<div class="size-9 relative">
+    <div class="w-3.5 h-4 left-[11.08px] top-[21.58px] absolute origin-top-left -rotate-90 border-[3.25px] border-amber-600"></div>
+    <div class="w-6 h-1 left-[7.92px] top-[24.67px] absolute rounded-sm border-[3.25px] border-amber-600"></div>
+</div>
+<div class="w-96 h-10 justify-start"><span class="text-amber-600 text-lg font-bold font-['Geologica'] underline leading-6">Seguridad digital: Concepto y herramientas básicas</span><span class="text-amber-600 text-lg font-bold font-['Geologica'] leading-6"> (Conexo)</span></div>
+
+<div class="size-9 relative">
+    <div class="w-3.5 h-4 left-[11.08px] top-[21.58px] absolute origin-top-left -rotate-90 border-[3.25px] border-amber-600"></div>
+    <div class="w-6 h-1 left-[7.92px] top-[24.67px] absolute rounded-sm border-[3.25px] border-amber-600"></div>
+</div>
+<div class="w-96 h-9 justify-start"><span class="text-amber-600 text-lg font-bold font-['Geologica'] underline leading-6">Tip: Plataformas y aplicaciones más seguras para activistas</span><span class="text-amber-600 text-lg font-bold font-['Geologica'] leading-6"> (Ciudadanía Inteligente)</span></div>
+
+<div class="size-9 relative">
+    <div class="w-3.5 h-4 left-[11.08px] top-[21.58px] absolute origin-top-left -rotate-90 border-[3.25px] border-amber-600"></div>
+    <div class="w-6 h-1 left-[7.92px] top-[24.67px] absolute rounded-sm border-[3.25px] border-amber-600"></div>
+</div>
+<div class="w-96 h-10 justify-start"><span class="text-amber-600 text-lg font-bold font-['Geologica'] underline leading-6">Manual de activismo digital</span><span class="text-amber-600 text-lg font-bold font-['Geologica'] leading-6"> (Ciudadanía Inteligente)</span></div>
+
+
+En la columna derecha (70%) va el siguiente contenido:
+<div class="w-96 h-14 justify-start text-stone-600 text-2xl font-medium font-['Geologica'] leading-7">Recomendaciones</div>
+<div class="text-center justify-start text-stone-500 text-4xl font-extrabold font-['Geologica'] uppercase leading-10">principales</div>
+<div class="w-[689px] h-[532px] bg-lime-200/30 rounded-[19.83px]">
+<div class="w-[626px] justify-start"><span class="text-stone-600 text-lg font-normal font-['Geologica'] leading-6"><br/></span><span class="text-stone-600 text-lg font-normal font-['Geologica'] leading-6">Usa contraseñas seguras y únicas; activa la verificación en dos pasos.<br/></span><span class="text-stone-600 text-lg font-normal font-['Geologica'] leading-6"><br/></span><span class="text-stone-600 text-lg font-normal font-['Geologica'] leading-6">Cambia tus claves de forma periódica. <br/>Evita redes WiFi públicas; conéctate solo a redes de confianza. <br/>Mantén bloqueados tus dispositivos cuando no estén en uso. <br/>Sé cuidadosa/o con lo que compartes en redes; evita publicar tu ubicación. <br/>Define reglas internas para el manejo de información sensible. <br/>Controla quién tiene acceso a ciertos archivos o plataformas; revisa permisos regularmente. <br/>Usa plataformas seguras para coordinar y compartir información. <br/>Mantén copias de seguridad con acceso restringido. <br/>Define pasos claros frente a robos, hackeos o pérdida de información.</span></div>
+</div>
+
+
