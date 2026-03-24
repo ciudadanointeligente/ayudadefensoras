@@ -1,0 +1,134 @@
+---
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'pt' } },
+  ];
+}
+
+import Layout from '../../layouts/Layout.astro';
+import shieldIcon from '../../assets/shield.webp';
+import { t } from '../../i18n/utils.ts';
+
+const { lang } = Astro.params;
+const locale = lang === 'pt' ? 'pt' : 'es';
+const homeUrl = locale === 'pt' ? '/pt/' : '/';
+---
+
+<Layout title={t('nav.autoproteccion', locale)}>
+
+  <!-- Barra inicial -->
+  <section class="flex w-full h-auto md:h-60 bg-[url(/bg-ayudadefensores.png)] bg-cover relative py-2 md:py-0">
+    <div class="absolute inset-0 bg-cover -z-10"></div>
+    <div class="w-full px-4 flex flex-col items-center gap-4 pt-16 pb-6 md:hidden">
+      <span class="w-fit inline-block rounded-2xl px-4 py-1 bg-white text-verde text-[12px] font-medium uppercase"><a href={homeUrl} class="hover:text-cafemedio">{t('nav.inicio', locale)}</a> / {t('nav.autoproteccion', locale)}</span>
+      <h1 class="text-3xl font-extrabold text-cafemedio text-center">{t('autoproteccion.titulo', locale)}</h1>
+      <p class="text-cafeoscuro text-base font-medium text-center leading-relaxed">{t('autoproteccion.descripcion', locale)}</p>
+    </div>
+    <div class="hidden md:flex absolute md:left-[150px] md:mt-4 top-1/3 -translate-y-1/2 w-[calc(100%-150px)] pr-8 flex flex-col gap-8">
+      <span class="w-fit inline-block rounded-2xl px-4 py-1 bg-white text-verde text-[12px] font-medium uppercase"><a href={homeUrl} class="hover:text-cafemedio">{t('nav.inicio', locale)}</a> / {t('nav.autoproteccion', locale)}</span>
+      <div class="flex items-start">
+        <h1 class="text-6xl font-extrabold text-cafemedio w-[450px] flex-shrink-0 whitespace-nowrap">{t('autoproteccion.titulo', locale)}</h1>
+        <p class="text-cafeoscuro text-lg font-medium max-w-2xl text-left leading-relaxed ml-[300px]">{t('autoproteccion.descripcion', locale)}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Texto principal -->
+  <section class="mt-12 md:mt-16 flex justify-center">
+    <div class="text-center">
+      <div class="text-stone-600 text-3xl md:text-5xl font-medium font-['Geologica'] md:leading-10">Herramientas de</div>
+      <div class="text-cafemedio text-3xl md:text-7xl font-extrabold font-['Geologica'] uppercase md:leading-[77.49px]">autoprotección</div>
+    </div>
+  </section>
+
+  <!-- Shields -->
+  <section class="mt-12 md:mt-12 flex justify-center">
+    <div class="container max-w-8xl mx-auto px-4">
+      <div class="flex flex-col flex-wrap md:flex-row place-content-center gap-8">
+        <div class="w-80 h-auto bg-cafeoscuro rounded-xl relative mt-12">
+          <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-14 h-14 bg-cafeoscuro rounded-full flex items-center justify-center">
+            <img src={shieldIcon.src} alt="Shield" class="w-10 h-10 brightness-250" />
+          </div>
+          <a href="autoproteccion"><div class="mt-6 mb-6 px-4 text-center text-amarillo">
+            <h3 class="text-lg font-bold uppercase">AUTOPROTECCIÓN DIGITAL</h3>
+          </div></a>
+        </div>
+        <div class="w-80 h-auto bg-cafeoscuro rounded-xl relative mt-12">
+          <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-14 h-14 bg-cafeoscuro rounded-full flex items-center justify-center">
+            <img src={shieldIcon.src} alt="Shield" class="w-10 h-10 brightness-250" />
+          </div>
+          <a href="autoproteccionfisica"><div class="mt-6 mb-6 px-4 text-center text-amarillo">
+            <h3 class="text-lg font-bold uppercase">AUTOPROTECCIÓN FÍSICA Y COMUNITARIA</h3>
+          </div></a>
+        </div>
+        <div class="w-80 h-auto bg-amarillo rounded-xl relative mt-12">
+          <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-14 h-14 bg-amarillo rounded-full flex items-center justify-center">
+            <img src={shieldIcon.src} alt="Shield" class="w-10 h-10" />
+          </div>
+          <a href="autoproteccionpsicosocial"><div class="mt-6 mb-6 px-4 text-center text-cafeoscuro">
+            <h3 class="text-lg font-bold uppercase">AUTOPROTECCIÓN PSICOSOCIAL</h3>
+          </div></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido principal dos columnas -->
+  <section class="mt-16 md:mt-32 pb-16 md:pb-32 flex justify-center">
+    <div class="container max-w-8xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row gap-16">
+        <!-- Columna izquierda -->
+        <div class="w-full md:w-[45%]">
+          <div class="text-center md:text-left text-stone-600 text-base md:text-xl font-black font-['Geologica'] leading-5 md:leading-6">Bienestar</div>
+          <div class="text-center md:text-left text-cafemedio text-4xl md:text-7xl font-black font-['Geologica'] uppercase leading-tight md:leading-[77.49px]">psicosocial</div>
+          <div class="text-center md:text-left text-stone-600 text-sm md:text-xl font-normal font-['Geologica'] leading-5 md:leading-6 mt-2 md:mt-0">La defensa del territorio no solo implica riesgos físicos: también puede generar desgaste emocional.</div>
+          <div class="text-center md:text-left text-stone-600 text-base md:text-xl font-black font-['Geologica'] uppercase leading-5 md:leading-6 mt-6 md:mt-8">Recursos útiles:</div>
+          
+          <div class="mt-2 md:mt-4 space-y-3 md:space-y-4">
+            <div class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 md:size-6 text-cafemedio flex-shrink-0">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+              <a href="https://hchr.org.mx/wp/wp-content/uploads/2021/08/Guia-Spotlight-Autocuidado-FINAL.pdf" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Guía de Autocuidado y Cuidado Colectivo – ONU DDHH México / Spotlight</a>
+            </div>
+            
+            <div class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 md:size-6 text-cafemedio flex-shrink-0">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+              <a href="https://im-defensoras.org/es/2020/05/compendio-de-herramientas-de-autocuidado-y-sanacion/" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Compendio de Herramientas de Autocuidado y Sanación – IM-Defensoras</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="w-full md:w-[55%] mt-8 md:mt-0">
+          <div class="text-center md:text-left text-stone-600 text-xl md:text-2xl font-medium font-['Geologica']">Recomendaciones</div>
+          <div class="text-center md:text-left text-verde text-3xl md:text-6xl font-extrabold font-['Geologica'] uppercase leading-tight md:leading-none mt-1 md:mt-0">principales</div>
+          <div class="w-full h-auto bg-lime-200/30 rounded-xl md:rounded-[19.83px] p-4 md:p-6 mt-3 md:mt-4">
+            <ul class="text-stone-600 text-sm md:text-lg font-normal font-['Geologica'] leading-5 md:leading-6 list-disc list-inside space-y-2 md:space-y-3">
+              <li class="font-bold">Manejo del estrés:</li>
+              <li>Identifica señales tempranas: agotamiento, irritabilidad, insomnio, sensación constante de alerta.</li>
+              <li>Realiza pausas activas durante el día: respiración, estiramientos, caminatas cortas.</li>
+              <li>Practica técnicas breves de meditación.</li>
+              <li class="font-bold mt-4">Salud mental:</li>
+              <li>Establece límites entre trabajo y vida personal.</li>
+              <li>Realiza actividades placenteras para desconectarte.</li>
+              <li>Busca acompañamiento profesional si lo necesitas.</li>
+              <li class="font-bold mt-4">Redes de apoyo:</li>
+              <li>Comparte tus preocupaciones con personas cercanas.</li>
+              <li>Crea apoyo mutuo con compañeros/as que viven situaciones similares.</li>
+              <li class="font-bold mt-4">Cuidado colectivo:</li>
+              <li>Organicen reuniones periódicas para compartir experiencias y apoyo mutuo.</li>
+              <li>Distribuyan responsabilidades para evitar la sobrecarga.</li>
+              <li>Definan protocolos comunitarios de cuidado (acompañamiento, contacto en emergencias).</li>
+              <li>Realicen actividades recreativas para fortalecer la cohesión del grupo.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

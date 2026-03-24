@@ -265,3 +265,94 @@ En la columna derecha (70%) va el siguiente contenido:
 </div>
 
 
+
+#### Autoprotección física y comunitaria
+
+Este es el contenido de la página Autoprotección física y comunitaria:
+Autoprotección física y
+Comunitaria
+
+Acciones simples y efectivas para resguardar tus datos, comunicaciones y fortalecer tu seguridad digital.
+
+Recursos útiles:
+-(ícono download) Manual de Seguridad para Defensores/as en Riesgo – Front Line Defenders
+-(ícono download) Guía Práctica de Seguridad Comunitaria para Mujeres Defensoras de Derechos Económicos, Sociales y Culturales (proDESC)
+-(ícono download) Protección integral, seguridad y estrategias de autocuidado (Ciudadanía Inteligente y Amnistía Internacional México)
+
+
+Recomendaciones
+principales
+
+Prevención personal:
+
+Analiza tu entorno: zonas de riesgo, actores locales, conflictos.
+
+Observa patrones: horarios, actividades o personas que se repiten en contextos riesgosos.
+
+Alterna tus rutas; elige caminos más seguros.
+
+Lleva identificación y contactos de emergencia.
+
+Informa a alguien de confianza sobre tu agenda y ubicación.
+
+Prevención comunitaria:
+
+Identifiquen colectivamente amenazas, actores de riesgo y situaciones vulnerables.
+
+Establezcan protocolos de emergencia con roles claros.
+
+Definan contactos confiables y rutas seguras.
+
+Usen canales seguros para coordinarse. Prefiere servicios de mensajería seguros como signal, y el servicio de correo de Proton Mail, que tiene opciones gratuitas.
+
+Generen alianzas con organizaciones, medios y otras comunidades defensoras.
+
+Distribuyan tareas de cuidado, acompañamiento y vigilancia.
+
+
+#### Autoprotección psicosocial
+
+Este es el contenido de Autoprotección psicosocial:
+
+Bienestar
+psicosocial
+La defensa del territorio no solo implica riesgos físicos: también puede generar desgaste emocional.
+Recursos útiles:
+Guía de Autocuidado y Cuidado Colectivo – ONU DDHH México / Spotlight
+Compendio de Herramientas de Autocuidado y Sanación – IM-Defensoras
+
+
+principales
+Recomendaciones
+
+<b>Manejo del estrés</b>
+
+Identifica señales tempranas: agotamiento, irritabilidad, insomnio, sensación constante de alerta.
+
+Realiza pausas activas durante el día: respiración, estiramientos, caminatas cortas.
+
+Practica técnicas breves de meditación.
+
+<b>Salud mental</b>
+
+Establece límites entre trabajo y vida personal.
+
+Realiza actividades placenteras para desconectarte.
+
+Busca acompañamiento profesional si lo necesitas.
+
+<b>Redes de apoyo</b>
+
+Comparte tus preocupaciones con personas cercanas.
+
+Crea apoyo mutuo con compañeros/as que viven situaciones similares.
+
+<b>Cuidado colectivo</b>
+
+Organicen reuniones periódicas para compartir experiencias y apoyo mutuo.
+
+Distribuyan responsabilidades para evitar la sobrecarga.
+
+Definan protocolos comunitarios de cuidado (acompañamiento, contacto en emergencias).
+
+Realicen actividades recreativas para fortalecer la cohesión del grupo.
