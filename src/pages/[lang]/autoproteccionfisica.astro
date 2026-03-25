@@ -54,7 +54,7 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
             <h3 class="text-lg font-bold uppercase">AUTOPROTECCIÓN DIGITAL</h3>
           </div></a>
         </div>
-        <div class="w-80 h-auto bg-amarillo rounded-xl relative mt-12">
+        <div class="w-80 h-auto bg-amarillo rounded-xl relative mt-12 border-4 border-amber-200">
           <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-14 h-14 bg-amarillo rounded-full flex items-center justify-center">
             <img src={shieldIcon.src} alt="Shield" class="w-10 h-10" />
           </div>
@@ -90,14 +90,14 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 md:size-6 text-cafemedio flex-shrink-0">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
               </svg>
-              <a href="https://www.frontlinedefenders.org/es/resource-guides/security/" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Manual de Seguridad para Defensores/as en Riesgo – Front Line Defenders</a>
+              <a href="https://www.frontlinedefenders.org/es/resource-publication/workbook-security-practical-steps-human-rights-defenders-risk" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Manual de Seguridad para Defensores/as en Riesgo – Front Line Defenders</a>
             </div>
             
             <div class="flex items-start gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 md:size-6 text-cafemedio flex-shrink-0">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
               </svg>
-              <a href="https://www.prodesc.org.mx/publicaciones/guia-practica-de-seguridad-comunitaria-para-mujeres-defensoras/" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Guía Práctica de Seguridad Comunitaria para Mujeres Defensoras de DESC – proDESC</a>
+              <a href="https://prodesc.org.mx/wp-content/uploads/2024/07/guia-seguridad-mujeres-defensoras-prodesc.pdf" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Guía Práctica de Seguridad Comunitaria para Mujeres Defensoras de DESC – proDESC</a>
             </div>
             
             <div class="flex items-start gap-2">
@@ -105,7 +105,7 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
               </svg>
               <div>
-                <a href="https://www.ciudadaniai.org/publicaciones/proteccion-integral-seguridad-y-estrategias-de-autocuidado" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Protección integral, seguridad y estrategias de autocuidado</a>
+                <a href="/proteccionintegral.pdf" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] underline leading-5 hover:text-cafemedio">Protección integral, seguridad y estrategias de autocuidado</a>
                 <span class="text-cafemedio text-sm md:text-lg font-bold font-['Geologica'] leading-5"> – Ciudadanía Inteligente y Amnistía Internacional México</span>
               </div>
             </div>
@@ -118,13 +118,13 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
           <div class="text-center md:text-left text-verde text-3xl md:text-6xl font-extrabold font-['Geologica'] uppercase leading-tight md:leading-none mt-1 md:mt-0">principales</div>
           <div class="w-full h-auto bg-lime-200/30 rounded-xl md:rounded-[19.83px] p-4 md:p-6 mt-3 md:mt-4">
             <ul class="text-stone-600 text-sm md:text-lg font-normal font-['Geologica'] leading-5 md:leading-6 list-disc list-inside space-y-2 md:space-y-3">
-              <li class="font-bold">Prevención personal:</li>
+              <ol class="font-bold uppercase">Prevención personal:</ol>
               <li>Analiza tu entorno: zonas de riesgo, actores locales, conflictos.</li>
               <li>Observa patrones: horarios, actividades o personas que se repiten en contextos riesgosos.</li>
               <li>Alterna tus rutas; elige caminos más seguros.</li>
               <li>Lleva identificación y contactos de emergencia.</li>
               <li>Informa a alguien de confianza sobre tu agenda y ubicación.</li>
-              <li class="font-bold mt-4">Prevención comunitaria:</li>
+              <ol class="font-bold mt-4 uppercase">Prevención comunitaria:</ol>
               <li>Identifiquen colectivamente amenazas, actores de riesgo y situaciones vulnerables.</li>
               <li>Establezcan protocolos de emergencia con roles claros.</li>
               <li>Definan contactos confiables y rutas seguras.</li>

@@ -356,3 +356,7 @@ Distribuyan responsabilidades para evitar la sobrecarga.
 Definan protocolos comunitarios de cuidado (acompañamiento, contacto en emergencias).
 
 Realicen actividades recreativas para fortalecer la cohesión del grupo.
+
+
+
+
