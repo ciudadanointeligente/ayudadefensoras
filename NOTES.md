@@ -28,4 +28,4 @@ Ejemplo de estructura de página apoyo.astro con México:
   <img data-layer="mapa 1" class="Mapa1 w-[783px] h-80" src="https://placehold.co/783x352" />
 
 
-
+:izquierdaLos archivos de países están formados por dos estructuras, una superior que tiene dos columnas con la información del país y una inferior que ahora está formada por desplegables con la información específica de los elementos de cada país. La sección inferior de los archivos de países, por ejemplo mexico.astro,  

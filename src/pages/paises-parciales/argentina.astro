@@ -1,37 +1,40 @@
 ---
 import { t } from '../../i18n/utils.ts';
-import Accordion from '../../components/Accordion.astro';
 
 const url = Astro.url.pathname;
 const locale = url.includes('/pt/') ? 'pt' : 'es';
 
 const ubicaciones = [
-  {
-    id: 'centro-denuncias',
-    titulo: 'Centro de Denuncias',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">La subsecretaría brineda asesoramiento jurídico, acompañamiento psico-social, y ayuda a realizar la denuncia penal correspondiente.</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Atención telefónica: 0-800-122-5878<br/>
-        Vía Whatsapp: (+54) (11) 4091-7352<br/>
-        Correo electrónico: <a href="mailto:denuncias@jus.gob.ar" class="text-white underline">denuncias@jus.gob.ar</a>
-      </p>
-    `
-  },
-  {
-    id: 'defensoria',
-    titulo: 'Defensoría del Pueblo',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Formulario de ayuda ante violaciones a los derechos humanos, violencia institucional, ambiente y salud.</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Link al formulario: <a href="https://www.defensor.gob.ar/contactoAreas.php?idS=4" target="_blank" rel="noopener noreferrer" class="text-white underline">https://www.defensor.gob.ar/contactoAreas.php?idS=4</a>
-      </p>
-    `
-  }
+  { id: 'centro-denuncias', titulo: 'Centro de Denuncias', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">La Subsecretaría</span></div>
+    <p class="text-stone-600 text-lg font-normal font-['Geologica'] mb-3">Brinda asesoramiento jurídico, acompañamiento psico-social, y ayuda a realizar la denuncia penal correspondiente.</p>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Atención telefónica:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">0-800-122-5878</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Vía Whatsapp:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(+54) (11) 4091-7352</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo electrónico:</span>
+      <a href="mailto:denuncias@jus.gob.ar" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">denuncias@jus.gob.ar</a>
+    </div>
+  ` },
+  { id: 'defensoria', titulo: 'Defensoría del Pueblo', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Formulario de ayuda</span></div>
+    <p class="text-stone-600 text-lg font-normal font-['Geologica'] mb-3">Ayuda ante violaciones a los derechos humanos, violencia institucional, ambiente y salud.</p>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Link al formulario:</span>
+      <a href="https://www.defensor.gob.ar/contactoAreas.php?idS=4" target="_blank" rel="noopener noreferrer" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">https://www.defensor.gob.ar/contactoAreas.php?idS=4</a>
+    </div>
+  ` }
 ];
+
+const ubicacionesJson = JSON.stringify(ubicaciones);
 ---
 
-<div class="bg-white mt-6">
+<div class="bg-white mt-6" x-data={`{ selectedId: null, ubicaciones: ${ubicacionesJson} }`}>
   <div class="flex flex-col md:flex-row gap-6 md:gap-5 px-4 md:px-6 py-4 md:py-6 max-w-7xl mx-auto">
     <div class="w-full md:w-[38%] flex flex-col">
       <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6"><span class="bg-amarillo p-1 rounded-md">Apoyo Estatal en:</span></div>
@@ -81,16 +84,30 @@ const ubicaciones = [
       <div class="w-full h-4 text-cafeoscuro text-lg font-semibold font-['Geologica'] uppercase leading-6 mt-4">seleccionar institución:</div>
     </div>
 
-    <div class="container max-w-6xl mx-auto px-4 mt-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
-        {ubicaciones.map((ubicacion) => (
-          <Accordion 
-            id={ubicacion.id}
-            title={ubicacion.titulo}
-            content={ubicacion.contenido}
-          />
-        ))}
+    <div class="container max-w-full mx-auto px-4 mt-8">
+      <div class="flex flex-wrap gap-4 justify-center py-6 mb-8">
+
+        <template x-for="ubicacion in ubicaciones" :key="ubicacion.id">
+          <button
+            @click="selectedId = ubicacion.id"
+            :class="selectedId === ubicacion.id ? 'bg-verde' : 'bg-cafeoscuro hover:bg-cafemedio'"
+            class="px-4 py-2 text-white font-medium rounded-full transition cursor-pointer"
+          >
+            <span x-text="ubicacion.titulo"></span>
+          </button>
+        </template>
       </div>
+      
+      <template x-for="ubicacion in ubicaciones" :key="ubicacion.id">
+        <div x-show="selectedId === ubicacion.id" x-transition class="mt-4 bg-white rounded-xl p-6 border border-verde/20">
+          <div class="text-amber-600 text-3xl font-black font-['Geologica'] uppercase mb-4" x-text="ubicacion.titulo"></div>
+          <div class="w-full md:w-[62%]" x-html="ubicacion.contenido"></div>
+        </div>
+      </template>
     </div>
   </div>
 </div>
+
+<style>
+[x-cloak] { display: none !important; }
+</style>

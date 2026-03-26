@@ -1,386 +1,477 @@
 ---
 import { t } from '../../i18n/utils.ts';
-import Accordion from '../../components/Accordion.astro';
 
 const url = Astro.url.pathname;
 const locale = url.includes('/pt/') ? 'pt' : 'es';
 
 const ubicaciones = [
-  {
-    id: 'aguascalientes',
-    titulo: 'Aguascalientes',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Perú 502, Fracc. Jardines de Santa Elena, Col. República de Perú # 502 C.P: 20236, Ags. México.<br/>
-Teléfono: 01(449) 1407855, 01(449) 140 7860, 01(449) 804 0165<br/>
-Correo: <a href="mailto:correo@dhags.org" class="text-white underline">correo@dhags.org</a>
-</p>
-`
-  },
-  {
-    id: 'baja-california-sur',
-    titulo: 'Baja California Sur',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Blvd. Constituyentes de 1975 e/ Calle Cabrilla y Calle Tiburón, Fraccionamiento Fidepaz, C. P. 23090, La Paz, Baja California Sur.<br/>
-Teléfono: 01 (612) 123 14 04<br/>
-Correo: <a href="mailto:quejas@derechoshumanosbcs.org.mx" class="text-white underline">quejas@derechoshumanosbcs.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'coahuila',
-    titulo: 'Coahuila',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Hidalgo 303 esquina con Aldama Zona Centro C.P. 25000. Saltillo, Coahuila.<br/>
-Teléfono: 01(844) 416 21 10, 01(844) 416 20 50<br/>
-Correo: <a href="mailto:cdhec@org.mx" class="text-white underline">cdhec@org.mx</a>, <a href="mailto:saltillo@cdhec.org.mx" class="text-white underline">saltillo@cdhec.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'chiapas',
-    titulo: 'Chiapas',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Boulevard Andrés Serra Rojas # 1090 Torre Chiapas Piso 17, Colonia Paso Limón C.P. 29045 Tuxtla Gutiérrez, Chiapas.<br/>
-Teléfono: 01 (961) 602 89 80, 01 (961) 602 89 81, 01 800 55 282 42<br/>
-Correo: <a href="mailto:presidencia@cedhchiapas.org" class="text-white underline">presidencia@cedhchiapas.org</a>, <a href="mailto:juan.trinidad@cedhchiapas.org" class="text-white underline">juan.trinidad@cedhchiapas.org</a>
-</p>
-`
-  },
-  {
-    id: 'durango',
-    titulo: 'Durango',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Cerro Gordo No. 32 Int. 13, Col. Fracc. Lomas del Parque. Durango, C,P. 34100<br/>
-Teléfono: 800 170 55 55<br/>
-Correo: <a href="mailto:primeravisitaduria@cedhdurango.org.mx" class="text-white underline">primeravisitaduria@cedhdurango.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'guanajuato',
-    titulo: 'Guanajuato',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Avenida Guty Cárdenas, No.1444, Puerta San Rafael, C.P.37480 León, Gto.<br/>
-Teléfono: 01 (477) 770 08 45, 01 800 470 44 00<br/>
-Correo: <a href="mailto:gahva@hotmail.com" class="text-white underline">gahva@hotmail.com</a>, <a href="mailto:centroestatal@derechoshumanosgto.org.mx" class="text-white underline">centroestatal@derechoshumanosgto.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'jalisco',
-    titulo: 'Jalisco',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Pedro Moreno 1616, Americana, 44160 Guadalajara, Jal.<br/>
-Teléfono: 33 3669 1100<br/>
-Correo: <a href="mailto:cedhjalisco@cedhj.org.mx" class="text-white underline">cedhjalisco@cedhj.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'michoacan',
-    titulo: 'Michoacán',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Fernando Montes de Oca #108, Col Chapultepec Norte, CP 58260 Morelia Michoacán.<br/>
-Teléfono: (443)11 33 500, (443) 46 50 330<br/>
-Correo: <a href="mailto:contacto@cedhmichoacan.org" class="text-white underline">contacto@cedhmichoacan.org</a>
-</p>
-`
-  },
-  {
-    id: 'nayarit',
-    titulo: 'Nayarit',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Calle Encino #18, entre calle paraíso y Av. Jacarandas, Colonia San Juan Tepic, Nayarit<br/>
-Teléfono: 311 217 8988, 311 213 8986<br/>
-Correo: <a href="mailto:cedhnayarit@gmail.com" class="text-white underline">cedhnayarit@gmail.com</a>
-</p>
-`
-  },
-  {
-    id: 'oaxaca',
-    titulo: 'Oaxaca',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Calle de los Derechos Humanos número 210, Colonia América, Oaxaca de Juárez, Oaxaca. C.P. 68104.<br/>
-Teléfono: (951) 503 0215, (951) 503 0220, (951) 513 5185, (951) 513 5191, (951) 513 5197<br/>
-Correo: <a href="mailto:contactanos@ddhpo.org" class="text-white underline">contactanos@ddhpo.org</a>
-</p>
-`
-  },
-  {
-    id: 'queretaro',
-    titulo: 'Querétaro',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Defensoría de los Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Av. Luis Vega Monrroy 1101, zona dos extendida, Plazas del Sol 1ra Secc, 76099 Santiago de Querétaro, Qro., México<br/>
-Teléfono: 44 21 09 54 00<br/>
-Correo: <a href="mailto:quejas@ddhqro.org" class="text-white underline">quejas@ddhqro.org</a>
-</p>
-`
-  },
-  {
-    id: 'san-luis-potosi',
-    titulo: 'San Luis Potosí',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Mariano Otero 685, Col. de Tequisquiapan, C.P. 78250. San Luis Potosí, S.L.P.<br/>
-Teléfono: 444 198 5000<br/>
-Correo: <a href="mailto:presidencia@derechoshumanosslp.org" class="text-white underline">presidencia@derechoshumanosslp.org</a>
-</p>
-`
-  },
-  {
-    id: 'sonora',
-    titulo: 'Sonora',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Blvd. Luis Encinas y Periférico Poniente. Hermosillo Sonora.<br/>
-Teléfono: 800 200 0152<br/>
-Correo: <a href="mailto:contacto@cedhsonora.org.mx" class="text-white underline">contacto@cedhsonora.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'tamaulipas',
-    titulo: 'Tamaulipas',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Río Guayalejo no. 223 Esq. Río Bravo Fracc. Zozya, CP 88070<br/>
-Teléfono: 800 703 23 48<br/>
-Correo: <a href="mailto:codhet@prodigy.net.mx" class="text-white underline">codhet@prodigy.net.mx</a>
-</p>
-`
-  },
-  {
-    id: 'veracruz',
-    titulo: 'Veracruz',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Pico De Orizaba No. 5, Col. Sipeh Ánimas. Cp 91067<br/>
-Teléfono: +52 2281414300, 800 2602200<br/>
-Correo: <a href="mailto:comentarios@cedhveracruz.org.mx" class="text-white underline">comentarios@cedhveracruz.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'zacatecas',
-    titulo: 'Zacatecas',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Circuito Cerro Gato S/N; Ciudad Gobierno; Zacatecas; Zac., C.P. 98160<br/>
-Teléfono: 800 624 27 27<br/>
-Correo: <a href="mailto:comentarios@cedhzac.org.mx" class="text-white underline">comentarios@cedhzac.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'baja-california',
-    titulo: 'Baja California',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Diego Rivera No. 2532 entre Av. Paseo de los Héroes y Blvd. Sánchez Taboada Zona Río Tijuana.<br/>
-Teléfono: 01 (664) 973 2373, 01 (664) 973 2374, 01 800 026 7342<br/>
-Correo: <a href="mailto:transparencia.cedh@derechoshumanosbc.org" class="text-white underline">transparencia.cedh@derechoshumanosbc.org</a>, <a href="mailto:tijuana@pdhbc.org" class="text-white underline">tijuana@pdhbc.org</a>
-</p>
-`
-  },
-  {
-    id: 'campeche',
-    titulo: 'Campeche',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Prolongación de la 59 # 6, centro, C.P. 24000, San Francisco de Campeche<br/>
-Teléfono: (981) 811 45 63<br/>
-Correo: <a href="mailto:cdhec@inedh.edu.mx" class="text-white underline">cdhec@inedh.edu.mx</a>
-</p>
-`
-  },
-  {
-    id: 'colima',
-    titulo: 'Colima',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Aniceto Castellanos no. 410-A, Colonia San Pablo C.P. 28060 Colima.<br/>
-Teléfono: 312 31 49084, 312 31 47186, 312 31 22994, 312 31 47795<br/>
-Correo: <a href="mailto:cdhcolima@cdhcolima.org.mx" class="text-white underline">cdhcolima@cdhcolima.org.mx</a>, <a href="mailto:codehucol@cdhcolima.org.mx" class="text-white underline">codehucol@cdhcolima.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'chihuahua',
-    titulo: 'Chihuahua',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Avenida Universidad 1449, Colonia Pueblo Axotla, Del. Álvaro Obregón, 01030 Ciudad de México<br/>
-Teléfono: 01 (55)52 29 56 00 Ext. 1102<br/>
-Correo: <a href="mailto:cdhdf@cdhdf.org.mx" class="text-white underline">cdhdf@cdhdf.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'guerrero',
-    titulo: 'Guerrero',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Edificio Morelos Av. Benito Juárez, Esq. Con Galo Soberon Y Parra, Sin Número. C.P. 39000, Chilpancingo.<br/>
-Teléfono: 01 800 710 66 00, 01 800 716 26 98, 01 800 710 66 18<br/>
-Correo: <a href="mailto:coddehum@prodigy.net.mx" class="text-white underline">coddehum@prodigy.net.mx</a>
-</p>
-`
-  },
-  {
-    id: 'hidalgo',
-    titulo: 'Hidalgo',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Av. Juárez s/n esquina José María Iglesias, Colonia Centro, Pachuca de Soto, 42000<br/>
-Teléfono: 800 71 765 96<br/>
-Correo: <a href="mailto:vis_gral_pachuca@cehhgo.org" class="text-white underline">vis_gral_pachuca@cehhgo.org</a>, <a href="mailto:presidencia@cdhh.org" class="text-white underline">presidencia@cdhh.org</a>
-</p>
-`
-  },
-  {
-    id: 'estado-mexico',
-    titulo: 'Estado de México',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Av. Nicolás San Juan 113, Col. Ex rancho Cuauhtémoc, Toluca, Edo. de México, C.P.50010<br/>
-Teléfono: 800 999 4000, 800 999 4002<br/>
-Correo: <a href="mailto:codhem@netspace.com.mx" class="text-white underline">codhem@netspace.com.mx</a>
-</p>
-`
-  },
-  {
-    id: 'morelos',
-    titulo: 'Morelos',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Av. San Diego 1404, Jardines las Delicias, 62343 Cuernavaca, Mor.<br/>
-Correo: <a href="mailto:contacto@cdhmorelos.org.mx" class="text-white underline">contacto@cdhmorelos.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'nuevo-leon',
-    titulo: 'Nuevo León',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Cuauhtémoc 335 Norte entre MM de Llano y Espinosa, Col. Centro, Monterrey, N.L.<br/>
-Teléfono: 800 822 9113<br/>
-Correo: <a href="mailto:cedhnl@cedhnl.org.mx" class="text-white underline">cedhnl@cedhnl.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'puebla',
-    titulo: 'Puebla',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: 5 poniente #339 Col. Centro, C.P. 72000, Puebla, Pue.<br/>
-Teléfono: 2223094700<br/>
-Correo: <a href="mailto:informes@cdhpuebla.org.mx" class="text-white underline">informes@cdhpuebla.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'quintana-roo',
-    titulo: 'Quintana Roo',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Av. Adolfo López Mateos 424, Campestre, 77030 Chetumal, Q.R., México.<br/>
-Teléfono: (52) 983 832 7090<br/>
-Correo: <a href="mailto:cdheqroo@cdheqroo.org.mx" class="text-white underline">cdheqroo@cdheqroo.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'sinaloa',
-    titulo: 'Sinaloa',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Ruperto L. Paliza Sur 566, Av Dr Ruperto Paliza 566, Miguel Alemán, 80200 Culiacán Rosales, Sin., México<br/>
-Teléfono: (662) 31 38 101 ext. 104<br/>
-Correo: <a href="mailto:memsinaloa@cedhsinaloa.org.mx" class="text-white underline">memsinaloa@cedhsinaloa.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'tabasco',
-    titulo: 'Tabasco',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Boulevard Adolfo Ruiz Cortines Esquina Con Francisco Javier Mina No. 503 Colonia Casa Blanca, Villahermosa, Tabasco. C.P. 86060<br/>
-Teléfono: 993 315 3545, 993 315 3467, 800 000 2334<br/>
-Correo: <a href="mailto:dirquejas@cedhtabasco.org.mx" class="text-white underline">dirquejas@cedhtabasco.org.mx</a>
-</p>
-`
-  },
-  {
-    id: 'tlaxcala',
-    titulo: 'Tlaxcala',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Arquitectos 27, Loma Bonita, Tlacomulco, 90090 Tlaxcala de Xicohténcatl, Tlax., México<br/>
-Teléfono: (246) 46 21630, (246) 46 29160, (246) 46 27595, (246) 4625184<br/>
-Correo: <a href="mailto:cedhtlax@prodigy.net.mx" class="text-white underline">cedhtlax@prodigy.net.mx</a>
-</p>
-`
-  },
-  {
-    id: 'yucatan',
-    titulo: 'Yucatán',
-    contenido: `
-<p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Comisión Estatal de Derechos Humanos</p>
-<p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-Dirección: Calle 27 No. 72 entre 8 y 10 Colonia México. C.P. 97125.<br/>
-Teléfono: (999) 927-92-75, (999) 927-85-96, (999) 688-67-54, 800-2263439<br/>
-Correo: <a href="mailto:codhey@prodigy.net.mx" class="text-white underline">codhey@prodigy.net.mx</a>
-</p>
-`
-  }
+  { id: 'aguascalientes', titulo: 'Aguascalientes', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Perú 502, Fracc. Jardines de Santa Elena, Col. República de Perú # 502 C.P: 20236, Ags. México.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">01(449) 1407855, 01(449) 140 7860, 01(449) 804 0165</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:correo@dhags.org" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">correo@dhags.org</a>
+    </div>
+  ` },
+  { id: 'baja-california-sur', titulo: 'Baja California Sur', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Blvd. Constituyentes de 1975 e/ Calle Cabrilla y Calle Tiburón, Fraccionamiento Fidepaz, C. P. 23090, La Paz, Baja California Sur.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">01 (612) 123 14 04</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:quejas@derechoshumanosbcs.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">quejas@derechoshumanosbcs.org.mx</a>
+    </div>
+  ` },
+  { id: 'coahuila', titulo: 'Coahuila', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Hidalgo 303 esquina con Aldama Zona Centro C.P. 25000. Saltillo, Coahuila.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">01(844) 416 21 10, 01(844) 416 20 50</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:cdhec@org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">cdhec@org.mx</a>, <a href="mailto:saltillo@cdhec.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline">saltillo@cdhec.org.mx</a>
+    </div>
+  ` },
+  { id: 'chiapas', titulo: 'Chiapas', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Boulevard Andrés Serra Rojas # 1090 Torre Chiapas Piso 17, Colonia Paso Limón C.P. 29045 Tuxtla Gutiérrez, Chiapas.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">01 (961) 602 89 80, 01 (961) 602 89 81, 01 800 55 282 42</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:presidencia@cedhchiapas.org" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">presidencia@cedhchiapas.org</a>, <a href="mailto:juan.trinidad@cedhchiapas.org" class="text-stone-600 text-lg font-normal font-['Geologica'] underline">juan.trinidad@cedhchiapas.org</a>
+    </div>
+  ` },
+  { id: 'durango', titulo: 'Durango', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Cerro Gordo No. 32 Int. 13, Col. Fracc. Lomas del Parque. Durango, C,P. 34100</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">800 170 55 55</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:primeravisitaduria@cedhdurango.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">primeravisitaduria@cedhdurango.org.mx</a>
+    </div>
+  ` },
+  { id: 'guanajuato', titulo: 'Guanajuato', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Avenida Guty Cárdenas, No.1444, Puerta San Rafael, C.P.37480 León, Gto.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">01 (477) 770 08 45, 01 800 470 44 00</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:gahva@hotmail.com" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">gahva@hotmail.com</a>, <a href="mailto:centroestatal@derechoshumanosgto.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline">centroestatal@derechoshumanosgto.org.mx</a>
+    </div>
+  ` },
+  { id: 'jalisco', titulo: 'Jalisco', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Pedro Moreno 1616, Americana, 44160 Guadalajara, Jal.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">33 3669 1100</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:cedhjalisco@cedhj.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">cedhjalisco@cedhj.org.mx</a>
+    </div>
+  ` },
+  { id: 'michoacan', titulo: 'Michoacán', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Fernando Montes de Oca #108, Col Chapultepec Norte, CP 58260 Morelia Michoacán.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(443)11 33 500, (443) 46 50 330</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:contacto@cedhmichoacan.org" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">contacto@cedhmichoacan.org</a>
+    </div>
+  ` },
+  { id: 'nayarit', titulo: 'Nayarit', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Calle Encino #18, entre calle paraíso y Av. Jacarandas, Colonia San Juan Tepic, Nayarit</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">311 217 8988, 311 213 8986</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:cedhnayarit@gmail.com" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">cedhnayarit@gmail.com</a>
+    </div>
+  ` },
+  { id: 'oaxaca', titulo: 'Oaxaca', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Calle de los Derechos Humanos número 210, Colonia América, Oaxaca de Juárez, Oaxaca. C.P. 68104.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(951) 503 0215, (951) 503 0220, (951) 513 5185, (951) 513 5191, (951) 513 5197</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:contactanos@ddhpo.org" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">contactanos@ddhpo.org</a>
+    </div>
+  ` },
+  { id: 'queretaro', titulo: 'Querétaro', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Defensoría de los Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Av. Luis Vega Monrroy 1101, zona dos extendida, Plazas del Sol 1ra Secc, 76099 Santiago de Querétaro, Qro., México</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">44 21 09 54 00</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:quejas@ddhqro.org" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">quejas@ddhqro.org</a>
+    </div>
+  ` },
+  { id: 'san-luis-potosi', titulo: 'San Luis Potosí', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Mariano Otero 685, Col. de Tequisquiapan, C.P. 78250. San Luis Potosí, S.L.P.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">444 198 5000</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:presidencia@derechoshumanosslp.org" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">presidencia@derechoshumanosslp.org</a>
+    </div>
+  ` },
+  { id: 'sonora', titulo: 'Sonora', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Blvd. Luis Encinas y Periférico Poniente. Hermosillo Sonora.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">800 200 0152</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:contacto@cedhsonora.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">contacto@cedhsonora.org.mx</a>
+    </div>
+  ` },
+  { id: 'tamaulipas', titulo: 'Tamaulipas', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Río Guayalejo no. 223 Esq. Río Bravo Fracc. Zozya, CP 88070</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">800 703 23 48</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:codhet@prodigy.net.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">codhet@prodigy.net.mx</a>
+    </div>
+  ` },
+  { id: 'veracruz', titulo: 'Veracruz', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Pico De Orizaba No. 5, Col. Sipeh Ánimas. Cp 91067</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">+52 2281414300, 800 2602200</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:comentarios@cedhveracruz.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">comentarios@cedhveracruz.org.mx</a>
+    </div>
+  ` },
+  { id: 'zacatecas', titulo: 'Zacatecas', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Circuito Cerro Gato S/N; Ciudad Gobierno; Zacatecas; Zac., C.P. 98160</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">800 624 27 27</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:comentarios@cedhzac.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">comentarios@cedhzac.org.mx</a>
+    </div>
+  ` },
+  { id: 'baja-california', titulo: 'Baja California', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Diego Rivera No. 2532 entre Av. Paseo de los Héroes y Blvd. Sánchez Taboada Zona Río Tijuana.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">01 (664) 973 2373, 01 (664) 973 2374, 01 800 026 7342</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:transparencia.cedh@derechoshumanosbc.org" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">transparencia.cedh@derechoshumanosbc.org</a>, <a href="mailto:tijuana@pdhbc.org" class="text-stone-600 text-lg font-normal font-['Geologica'] underline">tijuana@pdhbc.org</a>
+    </div>
+  ` },
+  { id: 'campeche', titulo: 'Campeche', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Prolongación de la 59 # 6, centro, C.P. 24000, San Francisco de Campeche</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(981) 811 45 63</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:cdhec@inedh.edu.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">cdhec@inedh.edu.mx</a>
+    </div>
+  ` },
+  { id: 'colima', titulo: 'Colima', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Aniceto Castellanos no. 410-A, Colonia San Pablo C.P. 28060 Colima.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">312 31 49084, 312 31 47186, 312 31 22994, 312 31 47795</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:cdhcolima@cdhcolima.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">cdhcolima@cdhcolima.org.mx</a>, <a href="mailto:codehucol@cdhcolima.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline">codehucol@cdhcolima.org.mx</a>
+    </div>
+  ` },
+  { id: 'chihuahua', titulo: 'Chihuahua', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Avenida Universidad 1449, Colonia Pueblo Axotla, Del. Álvaro Obregón, 01030 Ciudad de México</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">01 (55)52 29 56 00 Ext. 1102</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:cdhdf@cdhdf.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">cdhdf@cdhdf.org.mx</a>
+    </div>
+  ` },
+  { id: 'guerrero', titulo: 'Guerrero', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Edificio Morelos Av. Benito Juárez, Esq. Con Galo Soberon Y Parra, Sin Número. C.P. 39000, Chilpancingo.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">01 800 710 66 00, 01 800 716 26 98, 01 800 710 66 18</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:coddehum@prodigy.net.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">coddehum@prodigy.net.mx</a>
+    </div>
+  ` },
+  { id: 'hidalgo', titulo: 'Hidalgo', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Av. Juárez s/n esquina José María Iglesias, Colonia Centro, Pachuca de Soto, 42000</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">800 71 765 96</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:vis_gral_pachuca@cehhgo.org" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">vis_gral_pachuca@cehhgo.org</a>, <a href="mailto:presidencia@cdhh.org" class="text-stone-600 text-lg font-normal font-['Geologica'] underline">presidencia@cdhh.org</a>
+    </div>
+  ` },
+  { id: 'estado-mexico', titulo: 'Estado de México', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Av. Nicolás San Juan 113, Col. Ex rancho Cuauhtémoc, Toluca, Edo. de México, C.P.50010</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">800 999 4000, 800 999 4002</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:codhem@netspace.com.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">codhem@netspace.com.mx</a>
+    </div>
+  ` },
+  { id: 'morelos', titulo: 'Morelos', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Av. San Diego 1404, Jardines las Delicias, 62343 Cuernavaca, Mor.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:contacto@cdhmorelos.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">contacto@cdhmorelos.org.mx</a>
+    </div>
+  ` },
+  { id: 'nuevo-leon', titulo: 'Nuevo León', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Cuauhtémoc 335 Norte entre MM de Llano y Espinosa, Col. Centro, Monterrey, N.L.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">800 822 9113</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:cedhnl@cedhnl.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">cedhnl@cedhnl.org.mx</a>
+    </div>
+  ` },
+  { id: 'puebla', titulo: 'Puebla', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">5 poniente #339 Col. Centro, C.P. 72000, Puebla, Pue.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">2223094700</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:informes@cdhpuebla.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">informes@cdhpuebla.org.mx</a>
+    </div>
+  ` },
+  { id: 'quintana-roo', titulo: 'Quintana Roo', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Av. Adolfo López Mateos 424, Campestre, 77030 Chetumal, Q.R., México.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(52) 983 832 7090</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:cdheqroo@cdheqroo.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">cdheqroo@cdheqroo.org.mx</a>
+    </div>
+  ` },
+  { id: 'sinaloa', titulo: 'Sinaloa', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Ruperto L. Paliza Sur 566, Av Dr Ruperto Paliza 566, Miguel Alemán, 80200 Culiacán Rosales, Sin., México</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(662) 31 38 101 ext. 104</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:memsinaloa@cedhsinaloa.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">memsinaloa@cedhsinaloa.org.mx</a>
+    </div>
+  ` },
+  { id: 'tabasco', titulo: 'Tabasco', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Boulevard Adolfo Ruiz Cortines Esquina Con Francisco Javier Mina No. 503 Colonia Casa Blanca, Villahermosa, Tabasco. C.P. 86060</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">993 315 3545, 993 315 3467, 800 000 2334</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:dirquejas@cedhtabasco.org.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">dirquejas@cedhtabasco.org.mx</a>
+    </div>
+  ` },
+  { id: 'tlaxcala', titulo: 'Tlaxcala', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Arquitectos 27, Loma Bonita, Tlacomulco, 90090 Tlaxcala de Xicohténcatl, Tlax., México</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(246) 46 21630, (246) 46 29160, (246) 46 27595, (246) 4625184</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:cedhtlax@prodigy.net.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">cedhtlax@prodigy.net.mx</a>
+    </div>
+  ` },
+  { id: 'yucatan', titulo: 'Yucatán', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Comisión Estatal de Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Calle 27 No. 72 entre 8 y 10 Colonia México. C.P. 97125.</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(999) 927-92-75, (999) 927-85-96, (999) 688-67-54, 800-2263439</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:codhey@prodigy.net.mx" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">codhey@prodigy.net.mx</a>
+    </div>
+  ` }
 ];
+
+const ubicacionesJson = JSON.stringify(ubicaciones);
 ---
 
-<div class="bg-white mt-6">
+<div class="bg-white mt-6" x-data={`{ selectedId: null, ubicaciones: ${ubicacionesJson} }`}>
   <div class="flex flex-col md:flex-row gap-6 md:gap-5 px-4 md:px-6 py-4 md:py-6 max-w-7xl mx-auto">
     <div class="w-full md:w-[38%] flex flex-col">
       <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6"><span class="bg-amarillo p-1 rounded-md">Apoyo Estatal en:</span></div>
@@ -392,7 +483,7 @@ Correo: <a href="mailto:codhey@prodigy.net.mx" class="text-white underline">codh
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 28 28" stroke-width="1.5" stroke="#818B3E" class="size-8">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
         </svg>
-<div class="w-60 h-16 justify-start text-stone-500 text-lg font-bold font-['Geologica'] leading-6 text-verde">Personas defensoras de derechos humanos</div>
+        <div class="w-60 h-16 justify-start text-stone-500 text-lg font-bold font-['Geologica'] leading-6 text-verde">Personas defensoras de derechos humanos</div>
       </div>
       <div class="flex items-center pl-6 gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 28 28" stroke-width="1.5" stroke="#818B3E" class="size-8">
@@ -424,7 +515,6 @@ Correo: <a href="mailto:codhey@prodigy.net.mx" class="text-white underline">codh
         <span class="text-cafemedio text-lg font-black font-['Geologica'] leading-6">Dirección:</span>
         <span class="text-stone-600 text-lg font-normal font-['Geologica'] leading-6 block">Calle Dinamarca número 84, piso 7, colonia Juárez, Delegación Cuauhtémoc, Ciudad de México. C. P. 06600.</span>
       </div>
-      <!-- <img data-layer="mapa" class="w-full h-64 md:h-80 mt-6 rounded-xl object-cover" src="https://placehold.co/900x400" alt="Mapa de ubicación" /> -->
     </div>
   </div>
 
@@ -432,19 +522,32 @@ Correo: <a href="mailto:codhey@prodigy.net.mx" class="text-white underline">codh
     <div class="text-center">
       <div class="w-full h-14 text-cafeoscuro text-2xl font-medium font-['Geologica'] leading-7">Acción estatal y entidades</div>
       <div class="w-full text-verde text-4xl font-extrabold font-['Geologica'] uppercase leading-10">de apoyo en méxico</div>
-      <div class="w-full h-4 text-cafeoscuro text-lg font-semibold font-['Geologica'] uppercase leading-6 mt-4">seleccionar ESTADO DE MÉXICO:</div>
+      <div class="w-full h-4 text-cafeoscuro text-lg font-semibold font-['Geologica'] uppercase leading-6 mt-4">seleccionar ESTADO:</div>
     </div>
 
-    <div class="container max-w-6xl mx-auto px-4 mt-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
-        {ubicaciones.map((ubicacion) => (
-        <Accordion 
-          id={ubicacion.id}
-          title={ubicacion.titulo}
-          content={ubicacion.contenido}
-        />
-        ))}
+    <div class="container max-w-full mx-auto px-4 mt-8">
+      <div class="flex flex-wrap gap-4 justify-center py-6 mb-8">
+        <template x-for="ubicacion in ubicaciones" :key="ubicacion.id">
+          <button
+            @click="selectedId = ubicacion.id"
+            :class="selectedId === ubicacion.id ? 'bg-verde' : 'bg-cafeoscuro hover:bg-cafemedio'"
+            class="px-4 py-2 text-white font-medium rounded-full transition cursor-pointer"
+          >
+            <span x-text="ubicacion.titulo"></span>
+          </button>
+        </template>
       </div>
+      
+      <template x-for="ubicacion in ubicaciones" :key="ubicacion.id">
+        <div x-show="selectedId === ubicacion.id" x-transition class="mt-4 bg-white rounded-xl p-6 border border-verde/20">
+          <div class="text-amber-600 text-3xl font-black font-['Geologica'] uppercase mb-4" x-text="ubicacion.titulo"></div>
+          <div class="w-full md:w-[62%]" x-html="ubicacion.contenido"></div>
+        </div>
+      </template>
     </div>
   </div>
 </div>
+
+<style>
+[x-cloak] { display: none !important; }
+</style>

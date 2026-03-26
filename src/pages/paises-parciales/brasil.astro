@@ -1,127 +1,137 @@
 ---
 import { t } from '../../i18n/utils.ts';
-import Accordion from '../../components/Accordion.astro';
 
 const url = Astro.url.pathname;
 const locale = url.includes('/pt/') ? 'pt' : 'es';
 
 const ubicaciones = [
-  {
-    id: 'bahia',
-    titulo: 'Bahia',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Justicia, Derechos Humanos y Desarrollo Social</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Teléfono: (71) 3115-6577, (71) 3115-0315, (71) 3115-6674, (71) 3115-6184<br/>
-        Correo: <a href="mailto:cabinet@sjdhds.ba.gov.br" class="text-white underline">cabinet@sjdhds.ba.gov.br</a>
-      </p>
-    `
-  },
-  {
-    id: 'maranhao',
-    titulo: 'Maranhão',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaria de Estado dos Direitos Humanos e Participação Popular</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Dirección: Edificio Clodomir Milet, 2.º Piso, Bloque A. Avenida Jerônimo de Albuquerque, S/N. Calhau- São Luís/MA Código Postal: 65074-220<br/>
-        Teléfono: (98) 3210-5330<br/>
-        Correo: <a href="mailto:gabinete.sedihpop@gmail.com" class="text-white underline">gabinete.sedihpop@gmail.com</a>
-      </p>
-    `
-  },
-  {
-    id: 'minas-gerais',
-    titulo: 'Minas Gerais',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Estado de Desarrollo Social (Sedese)</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Teléfono: (31) 3916-8207, (31) 3916-8210, (31) 3916-8338<br/>
-        Correo: <a href="mailto:cabinetsec@social.mg.gov.br" class="text-white underline">cabinetsec@social.mg.gov.br</a>
-      </p>
-    `
-  },
-  {
-    id: 'paraiba',
-    titulo: 'Paraíba',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Estado de Desarrollo Humano - SEDH</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Teléfono: (83) 3133 4064, (83) 3133 4085, (83) 3133 4081, (83) 3133 4072<br/>
-        Correo: <a href="mailto:asesoriadegabinete@sedh.pb.gov.br" class="text-white underline">asesoriadegabinete@sedh.pb.gov.br</a>, <a href="mailto:ppddh.pb@gmail.com" class="text-white underline">ppddh.pb@gmail.com</a>, <a href="mailto:derechoshumanos.sedh@gmail.com" class="text-white underline">derechoshumanos.sedh@gmail.com</a>
-      </p>
-    `
-  },
-  {
-    id: 'rio-janeiro',
-    titulo: 'Río de Janeiro',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Estado de Desarrollo Social y Derechos Humanos – SEDSDH</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Teléfono: (21) 2334-5540<br/>
-        Correo: <a href="mailto:coordenacaoprotecao.dhrj@gmail.com" class="text-white underline">coordenacaoprotecao.dhrj@gmail.com</a>, <a href="mailto:gabinete.socialrj@sedsdh.rj.gov.br" class="text-white underline">gabinete.socialrj@sedsdh.rj.gov.br</a>
-      </p>
-    `
-  },
-  {
-    id: 'ceara',
-    titulo: 'Ceará',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Protección Social, Justicia, Ciudadanía, Mujer y Derechos Humanos</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Teléfono: (85) 3101-4557<br/>
-        Chat en línea: <a href="https://www.sps.ce.gov.br/2020/07/08/sps-cria-chat-para-facilitar-atendimento-do-cidadao/" target="_blank" rel="noopener noreferrer" class="text-white underline">Más información aquí</a>
-      </p>
-    `
-  },
-  {
-    id: 'mato-grosso',
-    titulo: 'Mato Grosso',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Estado de Asistencia Social y Ciudadanía de Mato Grosso</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Dirección: R. C, S/N - Centro Político Administrativo. Cuiabá - MT, 78050-970<br/>
-        Teléfono: (65) 9 9339-9735<br/>
-        Correo: <a href="mailto:ppddh@setasc.mt.gov.br" class="text-white underline">ppddh@setasc.mt.gov.br</a>
-      </p>
-    `
-  },
-  {
-    id: 'amazonas',
-    titulo: 'Amazonas',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Estado de Justicia y Derechos Humanos</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Teléfono: (91) 4009-2722, (91) 4009-2723, (91) 4009-2744, (91) 4009-2700<br/>
-        Correo: <a href="mailto:cabinet@sejudh.pa.gov.br" class="text-white underline">cabinet@sejudh.pa.gov.br</a>
-      </p>
-    `
-  },
-  {
-    id: 'pernambuco',
-    titulo: 'Pernambuco',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Justicia y Derechos Humanos del Estado de Pernambuco - SJDH/PE</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Teléfono: (81) 3182-7625<br/>
-        Contacto: <a href="http://www.sjdh.pe.gov.br/faleconosco" target="_blank" rel="noopener noreferrer" class="text-white underline">http://www.sjdh.pe.gov.br/faleconosco</a>
-      </p>
-    `
-  },
-  {
-    id: 'rio-grande-sul',
-    titulo: 'Río Grande do Sul',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Justicia y Sistemas Penales y Socioeducativos</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Dirección: Avenida Borges de Medeiros, 1501. Código Postal: 90119-900 / Porto Alegre - RS<br/>
-        Correo: <a href="mailto:ppddh@calabria.com.br" class="text-white underline">ppddh@calabria.com.br</a>
-      </p>
-    `
-  }
+  { id: 'bahia', titulo: 'Bahia', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Secretaría de Justicia, Derechos Humanos y Desarrollo Social</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(71) 3115-6577, (71) 3115-0315, (71) 3115-6674, (71) 3115-6184</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:cabinet@sjdhds.ba.gov.br" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">cabinet@sjdhds.ba.gov.br</a>
+    </div>
+  ` },
+  { id: 'maranhao', titulo: 'Maranhão', contenido: `
+    <div class="w-full text-cafeoscuro text-xl font-bold font-['Geologica'] mb-2">Secretaria de Estado dos Direitos Humanos e Participação Popular</div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Edificio Clodomir Milet, 2.º Piso, Bloque A. Avenida Jerônimo de Albuquerque, S/N. Calhau- São Luís/MA Código Postal: 65074-220</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(98) 3210-5330</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:gabinete.sedihpop@gmail.com" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">gabinete.sedihpop@gmail.com</a>
+    </div>
+  ` },
+  { id: 'minas-gerais', titulo: 'Minas Gerais', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Secretaría de Estado de Desarrollo Social (Sedese)</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(31) 3916-8207, (31) 3916-8210, (31) 3916-8338</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:cabinetsec@social.mg.gov.br" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">cabinetsec@social.mg.gov.br</a>
+    </div>
+  ` },
+  { id: 'paraiba', titulo: 'Paraíba', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Secretaría de Estado de Desarrollo Humano - SEDH</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(83) 3133 4064, (83) 3133 4085, (83) 3133 4081, (83) 3133 4072</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:asesoriadegabinete@sedh.pb.gov.br" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">asesoriadegabinete@sedh.pb.gov.br</a><br/>
+      <a href="mailto:ppddh.pb@gmail.com" class="text-stone-600 text-lg font-normal font-['Geologica'] underline">ppddh.pb@gmail.com</a><br/>
+      <a href="mailto:derechoshumanos.sedh@gmail.com" class="text-stone-600 text-lg font-normal font-['Geologica'] underline">derechoshumanos.sedh@gmail.com</a>
+    </div>
+  ` },
+  { id: 'rio-janeiro', titulo: 'Río de Janeiro', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Secretaría de Estado de Desarrollo Social y Derechos Humanos – SEDSDH</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(21) 2334-5540</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:coordenacaoprotecao.dhrj@gmail.com" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">coordenacaoprotecao.dhrj@gmail.com</a><br/>
+      <a href="mailto:gabinete.socialrj@sedsdh.rj.gov.br" class="text-stone-600 text-lg font-normal font-['Geologica'] underline">gabinete.socialrj@sedsdh.rj.gov.br</a>
+    </div>
+  ` },
+  { id: 'ceara', titulo: 'Ceará', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Secretaría de Protección Social, Justicia, Ciudadanía, Mujer y Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(85) 3101-4557</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Chat en línea:</span>
+      <a href="https://www.sps.ce.gov.br/2020/07/08/sps-cria-chat-para-facilitar-atendimento-do-cidadao/" target="_blank" rel="noopener noreferrer" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">Más información aquí</a>
+    </div>
+  ` },
+  { id: 'mato-grosso', titulo: 'Mato Grosso', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Secretaría de Estado de Asistencia Social y Ciudadanía de Mato Grosso</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">R. C, S/N - Centro Político Administrativo. Cuiabá - MT, 78050-970</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(65) 9 9339-9735</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:ppddh@setasc.mt.gov.br" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">ppddh@setasc.mt.gov.br</a>
+    </div>
+  ` },
+  { id: 'amazonas', titulo: 'Amazonas', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Secretaría de Estado de Justicia y Derechos Humanos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(91) 4009-2722, (91) 4009-2723, (91) 4009-2744, (91) 4009-2700</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:cabinet@sejudh.pa.gov.br" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">cabinet@sejudh.pa.gov.br</a>
+    </div>
+  ` },
+  { id: 'pernambuco', titulo: 'Pernambuco', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Secretaría de Justicia y Derechos Humanos del Estado de Pernambuco - SJDH/PE</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Teléfono:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">(81) 3182-7625</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Contacto:</span>
+      <a href="http://www.sjdh.pe.gov.br/faleconosco" target="_blank" rel="noopener noreferrer" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">http://www.sjdh.pe.gov.br/faleconosco</a>
+    </div>
+  ` },
+  { id: 'rio-grande-sul', titulo: 'Río Grande do Sul', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Secretaría de Justicia y Sistemas Penales y Socioeducativos</span></div>
+    <div class="w-full">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Dirección:</span>
+      <span class="text-stone-600 text-lg font-normal font-['Geologica'] block">Avenida Borges de Medeiros, 1501. Código Postal: 90119-900 / Porto Alegre - RS</span>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Correo:</span>
+      <a href="mailto:ppddh@calabria.com.br" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">ppddh@calabria.com.br</a>
+    </div>
+  ` }
 ];
+
+const ubicacionesJson = JSON.stringify(ubicaciones);
 ---
 
-<div class="bg-white mt-6">
+<div class="bg-white mt-6" x-data={`{ selectedId: null, ubicaciones: ${ubicacionesJson} }`}>
   <div class="flex flex-col md:flex-row gap-6 md:gap-5 px-4 md:px-6 py-4 md:py-6 max-w-7xl mx-auto">
     <div class="w-full md:w-[38%] flex flex-col">
       <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6"><span class="bg-amarillo p-1 rounded-md">Apoyo Estatal en:</span></div>
@@ -159,7 +169,7 @@ const ubicaciones = [
       </div>
       <div class="w-full mt-4">
         <span class="text-cafemedio text-lg font-black font-['Geologica'] leading-6">Dirección:</span>
-        <span class="text-stone-600 text-lg font-normal font-['Geologica'] leading-6 block">Secretaría Nacional de Derechos Humanos<br/>Sector Comercial Sur - B, Bloque 9, Lote C<br/>Edifício Corporativo Parque Cidade, Torre A, 9º piso<br/>Brasilia, Distrito Federal, 70308-200</span>
+        <span class="text-stone-600 text-lg font-normal font-['Geologica'] leading-6 block">Secretaría Nacional de Derechos Humanos<br/>Sector Comercial Sur - B, Bloque 9, Lote C<br/>Edifício Corporativo Parque Ciudad, Torre A, 9º piso<br/>Brasilia, Distrito Federal, 70308-200</span>
       </div>
     </div>
   </div>
@@ -171,16 +181,30 @@ const ubicaciones = [
       <div class="w-full h-4 text-cafeoscuro text-lg font-semibold font-['Geologica'] uppercase leading-6 mt-4">seleccionar ESTADO:</div>
     </div>
 
-    <div class="container max-w-6xl mx-auto px-4 mt-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
-        {ubicaciones.map((ubicacion) => (
-          <Accordion 
-            id={ubicacion.id}
-            title={ubicacion.titulo}
-            content={ubicacion.contenido}
-          />
-        ))}
+    <div class="container max-w-full mx-auto px-4 mt-8">
+      <div class="flex flex-wrap gap-4 justify-center py-6 mb-8">
+
+        <template x-for="ubicacion in ubicaciones" :key="ubicacion.id">
+          <button
+            @click="selectedId = ubicacion.id"
+            :class="selectedId === ubicacion.id ? 'bg-verde' : 'bg-cafeoscuro hover:bg-cafemedio'"
+            class="px-4 py-2 text-white font-medium rounded-full transition cursor-pointer"
+          >
+            <span x-text="ubicacion.titulo"></span>
+          </button>
+        </template>
       </div>
+      
+      <template x-for="ubicacion in ubicaciones" :key="ubicacion.id">
+        <div x-show="selectedId === ubicacion.id" x-transition class="mt-4 bg-white rounded-xl p-6 border border-verde/20">
+          <div class="text-amber-600 text-3xl font-black font-['Geologica'] uppercase mb-4" x-text="ubicacion.titulo"></div>
+          <div class="w-full md:w-[62%]" x-html="ubicacion.contenido"></div>
+        </div>
+      </template>
     </div>
   </div>
 </div>
+
+<style>
+[x-cloak] { display: none !important; }
+</style>

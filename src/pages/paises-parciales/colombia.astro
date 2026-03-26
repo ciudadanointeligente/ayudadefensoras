@@ -1,36 +1,34 @@
 ---
 import { t } from '../../i18n/utils.ts';
-import Accordion from '../../components/Accordion.astro';
 
 const url = Astro.url.pathname;
 const locale = url.includes('/pt/') ? 'pt' : 'es';
 
 const ubicaciones = [
-  {
-    id: 'ministerio-ambiente',
-    titulo: 'Ministerio de Ambiente y Desarrollo Sostenible',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Medidas de protección para liderazgos ambientales.</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Más información: <a href="https://www.minambiente.gov.co/lideres-ambientales/identificacion-y-proteccion/" target="_blank" rel="noopener noreferrer" class="text-white underline">https://www.minambiente.gov.co/lideres-ambientales/identificacion-y-proteccion/</a>
-      </p>
-    `
-  },
-  {
-    id: 'defensoria-pueblo',
-    titulo: 'Defensoría del Pueblo',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Protege y promociona los derechos humanos en Colombia.</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Sitio web: <a href="https://www.defensoria.gov.co/en/web/guest" target="_blank" rel="noopener noreferrer" class="text-white underline">https://www.defensoria.gov.co/en/web/guest</a><br/>
-        Directorio: <a href="https://www.defensoria.gov.co/en/directorio-de-dependencias" target="_blank" rel="noopener noreferrer" class="text-white underline">https://www.defensoria.gov.co/en/directorio-de-dependencias</a>
-      </p>
-    `
-  }
+  { id: 'ministerio-ambiente', titulo: 'Ministerio de Ambiente', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Medidas de protección para liderazgos ambientales.</span></div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Más información:</span>
+      <a href="https://www.minambiente.gov.co/lideres-ambientales/identificacion-y-proteccion/" target="_blank" rel="noopener noreferrer" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">https://www.minambiente.gov.co/lideres-ambientales/identificacion-y-proteccion/</a>
+    </div>
+  ` },
+  { id: 'defensoria-pueblo', titulo: 'Defensoría del Pueblo', contenido: `
+    <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Protege y promociona los derechos humanos en Colombia.</span></div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Sitio web:</span>
+      <a href="https://www.defensoria.gov.co/en/web/guest" target="_blank" rel="noopener noreferrer" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">https://www.defensoria.gov.co/en/web/guest</a>
+    </div>
+    <div class="w-full mt-3">
+      <span class="text-cafemedio text-lg font-bold font-['Geologica']">Directorio:</span>
+      <a href="https://www.defensoria.gov.co/en/directorio-de-dependencias" target="_blank" rel="noopener noreferrer" class="text-stone-600 text-lg font-normal font-['Geologica'] underline block">https://www.defensoria.gov.co/en/directorio-de-dependencias</a>
+    </div>
+  ` }
 ];
+
+const ubicacionesJson = JSON.stringify(ubicaciones);
 ---
 
-<div class="bg-white mt-6">
+<div class="bg-white mt-6" x-data={`{ selectedId: null, ubicaciones: ${ubicacionesJson} }`}>
   <div class="flex flex-col md:flex-row gap-6 md:gap-5 px-4 md:px-6 py-4 md:py-6 max-w-7xl mx-auto">
     <div class="w-full md:w-[38%] flex flex-col">
       <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6"><span class="bg-amarillo p-1 rounded-md">Apoyo Estatal en:</span></div>
@@ -70,16 +68,30 @@ const ubicaciones = [
       <div class="w-full h-4 text-cafeoscuro text-lg font-semibold font-['Geologica'] uppercase leading-6 mt-4">seleccionar institución:</div>
     </div>
 
-    <div class="container max-w-6xl mx-auto px-4 mt-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
-        {ubicaciones.map((ubicacion) => (
-          <Accordion 
-            id={ubicacion.id}
-            title={ubicacion.titulo}
-            content={ubicacion.contenido}
-          />
-        ))}
+    <div class="container max-w-full mx-auto px-4 mt-8">
+      <div class="flex flex-wrap gap-4 justify-center py-6 mb-8">
+
+        <template x-for="ubicacion in ubicaciones" :key="ubicacion.id">
+          <button
+            @click="selectedId = ubicacion.id"
+            :class="selectedId === ubicacion.id ? 'bg-verde' : 'bg-cafeoscuro hover:bg-cafemedio'"
+            class="px-4 py-2 text-white font-medium rounded-full transition cursor-pointer"
+          >
+            <span x-text="ubicacion.titulo"></span>
+          </button>
+        </template>
       </div>
+      
+      <template x-for="ubicacion in ubicaciones" :key="ubicacion.id">
+        <div x-show="selectedId === ubicacion.id" x-transition class="mt-4 bg-white rounded-xl p-6 border border-verde/20">
+          <div class="text-amber-600 text-3xl font-black font-['Geologica'] uppercase mb-4" x-text="ubicacion.titulo"></div>
+          <div class="w-full md:w-[62%]" x-html="ubicacion.contenido"></div>
+        </div>
+      </template>
     </div>
   </div>
 </div>
+
+<style>
+[x-cloak] { display: none !important; }
+</style>
