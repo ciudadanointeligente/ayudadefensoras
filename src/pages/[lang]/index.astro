@@ -44,12 +44,12 @@ const locale = lang === 'pt' ? 'pt' : 'es';
     <div class="container max-w-6xl mx-auto px-4">
       <div class="flex flex-col md:flex-row">
         <div class="w-full md:w-1/3 md:text-left text-center">
-          <div class="text-4xl md:text-5xl font-normal text-cafeoscuro leading-16">{t('index.ayuda.titulo', locale)}</div>
-          <p class="text-5xl md:text-7xl font-extrabold text-cafemedio">{t('index.ayuda.titulo2', locale)}</p>
+          <div class="text-3xl md:text-5xl font-normal text-cafeoscuro leading-tight">{t('index.ayuda.titulo', locale)}</div>
+          <p class="text-4xl md:text-7xl font-extrabold text-cafemedio">{t('index.ayuda.titulo2', locale)}</p>
         </div>
         <div class="w-full md:w-2/3 mt-4 md:mt-0">
-          <div class="bg-lime-200/40 rounded-lg p-6 text-center md:text-left">
-            <p class="text-cafeoscuro text-xl">{t('index.ayuda.descripcion', locale)}</p>
+          <div class="bg-lime-200/40 rounded-lg p-4 md:p-6 text-center md:text-left">
+            <p class="text-cafeoscuro text-base md:text-xl">{t('index.ayuda.descripcion', locale)}</p>
           </div>
         </div>
       </div>
@@ -59,8 +59,8 @@ const locale = lang === 'pt' ? 'pt' : 'es';
   <!-- Shields -->
   <section class="mt-12 md:mt-12 flex justify-center">
     <div class="container max-w-6xl mx-auto px-4">
-      <div class="flex flex-col flex-wrap md:flex-row place-content-center gap-8">
-        <div class="w-80 h-auto bg-amarillo rounded-xl relative mt-12">
+      <div class="flex flex-col sm:flex-row flex-wrap place-content-center gap-4 sm:gap-8">
+        <div class="w-full sm:w-80 h-auto bg-amarillo rounded-xl relative mt-12 mx-auto sm:mx-0">
           <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-amarillo rounded-full flex items-center justify-center">
             <img src={shieldIcon.src} alt="Shield" class="w-16 h-16" />
           </div>
@@ -69,7 +69,7 @@ const locale = lang === 'pt' ? 'pt' : 'es';
             <p class="text-md mt-2 mx-6 pb-10">Conoce los mecanismos institucionales y programas de protección disponibles en tu país.</p>
           </div>
         </div>
-        <div class="w-80 h-auto bg-verde rounded-xl relative mt-12">
+        <div class="w-full sm:w-80 h-auto bg-verde rounded-xl relative mt-12 mx-auto sm:mx-0">
           <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-verde rounded-full flex items-center justify-center">
             <img src={shieldIcon.src} alt="Shield" class="w-16 h-16 invert brightness-20" />
           </div>
@@ -78,7 +78,7 @@ const locale = lang === 'pt' ? 'pt' : 'es';
             <p class="text-md mt-2 mx-6 pb-10">Herramientas de autoprotección digital, física, comunitaria y psicosocial para prevenir riesgos.</p>
           </div>
         </div>
-        <div class="w-80 h-auto bg-cafemedio rounded-xl relative mt-12">
+        <div class="w-full sm:w-80 h-auto bg-cafemedio rounded-xl relative mt-12 mx-auto sm:mx-0">
           <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-cafemedio rounded-full flex items-center justify-center">
             <img src={shieldIcon.src} alt="Shield" class="w-16 h-16 invert brightness-20" />
           </div>
@@ -103,8 +103,8 @@ const locale = lang === 'pt' ? 'pt' : 'es';
     <div class="container max-w-6xl mx-auto px-4">
       <div class="flex flex-col md:flex-row">
         <div class="w-full md:w-1/2 md:text-left text-center ms-4 md:ms-0">
-          <div class="text-4xl md:text-5xl font-normal text-cafeoscuro">{t('index.queEs.titulo', locale)}</div>
-          <p class="text-5xl md:text-7xl font-extrabold text-cafemedio">{t('index.queEs.titulo2', locale)}</p>
+          <div class="text-3xl md:text-5xl font-normal text-cafeoscuro">{t('index.queEs.titulo', locale)}</div>
+          <p class="text-4xl md:text-7xl font-extrabold text-cafemedio">{t('index.queEs.titulo2', locale)}</p>
         </div>
         <div class="w-full md:w-1/2 mt-4 md:mt-0">
           <div class="md:ml-20 text-center md:text-left">
@@ -131,13 +131,13 @@ const locale = lang === 'pt' ? 'pt' : 'es';
     <div class="container max-w-6xl mx-auto px-4">
       <div class="flex flex-col items-center text-center">
         <div class="mb-8">
-          <div class="text-4xl md:text-5xl font-normal text-cafeoscuro">{t('index.escazu.titulo', locale)}</div>
-          <p class="text-5xl md:text-7xl font-extrabold text-cafemedio">{t('index.escazu.titulo2', locale)}</p>
-          <div class="pt-2 flex w-2/3 text-center mx-auto">
-            <p class="text-xl md:text-xl font-normal text-cafeoscuro">{t('index.escazu.titulo3', locale)}</p>
+          <div class="text-3xl md:text-5xl font-normal text-cafeoscuro">{t('index.escazu.titulo', locale)}</div>
+          <p class="text-4xl md:text-7xl font-extrabold text-cafemedio">{t('index.escazu.titulo2', locale)}</p>
+          <div class="pt-2 text-center mx-auto">
+            <p class="text-lg md:text-xl font-normal text-cafeoscuro">{t('index.escazu.titulo3', locale)}</p>
           </div>
         </div>
-        <button class="uppercase bg-cafeoscuro text-white font-bold text-xs md:text-[18px] px-2 py-2 md:px-6 md:py-4 rounded-full hover:bg-cafeclaro transition flex justify-center items-center">
+        <button class="uppercase bg-cafeoscuro text-white font-bold text-xs md:text-[18px] px-4 py-3 md:px-6 md:py-4 rounded-full hover:bg-cafeclaro transition flex justify-center items-center">
           <a href={`/${lang}/escazu`}>{t('index.escazu.boton', locale)}</a>
         </button>
       </div>
@@ -156,8 +156,8 @@ const locale = lang === 'pt' ? 'pt' : 'es';
     <div class="text-center">
       <div class="flex justify-center">
         <div class="text-left">
-          <div class="text-4xl md:text-5xl font-normal text-cafeoscuro">{t('index.quien.titulo', locale)}</div>
-          <p class="text-5xl md:text-7xl font-extrabold text-cafemedio">{t('index.quien.titulo2', locale)}</p>
+          <div class="text-3xl md:text-5xl font-normal text-cafeoscuro">{t('index.quien.titulo', locale)}</div>
+          <p class="text-4xl md:text-7xl font-extrabold text-cafemedio">{t('index.quien.titulo2', locale)}</p>
         </div>
       </div>
     </div>
@@ -168,12 +168,12 @@ const locale = lang === 'pt' ? 'pt' : 'es';
           <div class="mt-2 flex justify-center md:justify-start">
             <img src={logoFCIVerde.src} alt="Logo FCI" class="w-40 md:w-70 h-auto" />
           </div>
-          <a href="https://ciudadaniai.org" target="_blank"><button class="w-full mt-4 uppercase bg-cafeoscuro text-white font-bold text-xs md:text-[18px] px-2 py-2 md:px-6 md:py-4 rounded-full hover:bg-cafeclaro transition flex justify-center md:justify-start items-center md:w-auto">
+          <a href="https://ciudadaniai.org" target="_blank"><button class="w-full mt-4 uppercase bg-cafeoscuro text-white font-bold text-xs md:text-[18px] px-4 py-3 md:px-6 md:py-4 rounded-full hover:bg-cafeclaro transition flex justify-center md:justify-start items-center md:w-auto">
             {t('index.quien.boton', locale)} 
           </button></a>
         </div>
         <div class="w-full md:w-2/3 mt-4 md:mt-0">
-          <div class="md:ml-4 bg-amber-300/10 rounded-lg p-6 text-center md:text-left" id="quienes-somos-content">
+          <div class="md:ml-4 bg-amber-300/10 rounded-lg p-4 md:p-6 text-center md:text-left" id="quienes-somos-content">
             <span class="text-cafeoscuro">Cargando...</span>
           </div>
         </div>

@@ -188,7 +188,7 @@ const ubicacionesJson = JSON.stringify(ubicaciones);
           <button
             @click="selectedId = ubicacion.id"
             :class="selectedId === ubicacion.id ? 'bg-verde' : 'bg-cafeoscuro hover:bg-cafemedio'"
-            class="px-4 py-2 text-white font-medium rounded-full transition cursor-pointer"
+            class="px-2 sm:px-4 py-2 text-white font-medium rounded-full transition cursor-pointer text-sm sm:text-base"
           >
             <span x-text="ubicacion.titulo"></span>
           </button>

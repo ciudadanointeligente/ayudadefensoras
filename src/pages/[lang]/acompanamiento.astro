@@ -70,9 +70,6 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
       ],
       seleccionarPais(id) {
         this.selectedPais = this.selectedPais === id ? null : id;
-      },
-      getPaisActual() {
-        return this.paises.find(p => p.id === this.selectedPais);
       }
     }));
   });
@@ -98,8 +95,8 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
   <!-- Texto principal -->
   <section class="mt-12 md:mt-16 flex justify-center">
     <div class="text-center">
-      <div class="text-stone-600 text-3xl md:text-5xl font-medium font-['Geologica'] md:leading-10">Organizaciones que trabajan a nivel</div>
-      <div class="text-cafemedio text-3xl md:text-7xl font-extrabold font-['Geologica'] uppercase md:leading-[77.49px]">regional o global</div>
+      <div class="text-stone-600 text-xl md:text-5xl font-medium font-['Geologica'] leading-tight md:leading-10">Organizaciones que trabajan a nivel</div>
+      <div class="text-cafemedio text-2xl md:text-7xl font-extrabold font-['Geologica'] uppercase leading-tight md:leading-[77.49px]">regional o global</div>
     </div>
   </section>
 
@@ -109,13 +106,13 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
       <div class="flex flex-col md:flex-row flex-wrap justify-center gap-8">
         
         <!-- Caja 1: Front Line Defenders -->
-        <div class="w-72 flex flex-col">
-          <div class="w-72 h-16 bg-verde rounded-[20px] rounded-b-none flex items-center justify-center">
+        <div class="w-full sm:w-72 flex flex-col mx-auto sm:mx-0">
+          <div class="w-full sm:w-72 h-16 bg-verde rounded-[20px] rounded-b-none flex items-center justify-center">
             <div class="text-white text-xl font-semibold font-['Geologica'] text-center">Front Line Defenders</div>
           </div>
-          <div class="w-72 h-64 bg-lime-200/40 rounded-[20px] rounded-t-none p-4 flex flex-col">
+          <div class="w-full sm:w-72 h-auto sm:h-64 bg-lime-200/40 rounded-[20px] rounded-t-none p-4 flex flex-col">
             <p class="text-stone-600 text-base font-normal font-['Geologica'] leading-5">Organización internacional de Derechos Humanos, enfocada en proteger a personas defensoras en riesgo. Cuenta con una línea de contacto para emergencias.</p>
-            <div class="mt-auto pt-2.5 flex justify-center">
+            <div class="mt-4 sm:mt-auto pt-2.5 flex justify-center">
               <a href="https://www.frontlinedefenders.org/es" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-cafemedio rounded-[34.60px] inline-flex justify-center items-center gap-3">
                 <span class="text-white text-sm font-black font-['Geologica'] uppercase">revisar sitio web</span>
               </a>
@@ -124,13 +121,13 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
         </div>
 
         <!-- Caja 2: Global Witness -->
-        <div class="w-72 flex flex-col">
-          <div class="w-72 h-16 bg-verde rounded-[20px] rounded-b-none flex items-center justify-center">
+        <div class="w-full sm:w-72 flex flex-col mx-auto sm:mx-0">
+          <div class="w-full sm:w-72 h-16 bg-verde rounded-[20px] rounded-b-none flex items-center justify-center">
             <div class="text-white text-xl font-semibold font-['Geologica'] text-center">Global Witness</div>
           </div>
-          <div class="w-72 h-64 bg-lime-200/40 rounded-[20px] rounded-t-none p-4 flex flex-col">
+          <div class="w-full sm:w-72 h-auto sm:h-64 bg-lime-200/40 rounded-[20px] rounded-t-none p-4 flex flex-col">
             <p class="text-stone-600 text-base font-normal font-['Geologica'] leading-5">Dedicados a exponer a las industrias que se benefician de la emergencia climática y apoyan a las personas que luchan para defender sus comunidades y sus derechos.</p>
-            <div class="mt-auto pt-2.5 flex justify-center">
+            <div class="mt-4 sm:mt-auto pt-2.5 flex justify-center">
               <a href="https://www.globalwitness.org/es" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-cafemedio rounded-[34.60px] inline-flex justify-center items-center gap-3">
                 <span class="text-white text-sm font-black font-['Geologica'] uppercase">revisar sitio web</span>
               </a>
@@ -139,13 +136,13 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
         </div>
 
         <!-- Caja 3: Protection International -->
-        <div class="w-72 flex flex-col">
-          <div class="w-72 h-16 bg-verde rounded-[20px] rounded-b-none flex items-center justify-center">
+        <div class="w-full sm:w-72 flex flex-col mx-auto sm:mx-0">
+          <div class="w-full sm:w-72 h-16 bg-verde rounded-[20px] rounded-b-none flex items-center justify-center">
             <div class="text-white text-xl font-semibold font-['Geologica'] text-center">Protection International</div>
           </div>
-          <div class="w-72 h-64 bg-lime-200/40 rounded-[20px] rounded-t-none p-4 flex flex-col">
+          <div class="w-full sm:w-72 h-auto sm:h-64 bg-lime-200/40 rounded-[20px] rounded-t-none p-4 flex flex-col">
             <p class="text-stone-600 text-base font-normal font-['Geologica'] leading-5">Se especializa en trabajo preventivo, acompañando a personas defensoras de Derechos Humanos a crear sus estrategias de protección.</p>
-            <div class="mt-auto pt-2.5 flex justify-center">
+            <div class="mt-4 sm:mt-auto pt-2.5 flex justify-center">
               <a href="https://www.protectioninternational.org/our-work/what-we-do/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-cafemedio rounded-[34.60px] inline-flex justify-center items-center gap-3">
                 <span class="text-white text-sm font-black font-['Geologica'] uppercase">revisar sitio web</span>
               </a>
@@ -154,13 +151,13 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
         </div>
 
         <!-- Caja 4: Fondo de Acción Urgente -->
-        <div class="w-72 flex flex-col">
-          <div class="w-72 h-16 bg-verde rounded-[20px] rounded-b-none flex items-center justify-center">
+        <div class="w-full sm:w-72 flex flex-col mx-auto sm:mx-0">
+          <div class="w-full sm:w-72 h-16 bg-verde rounded-[20px] rounded-b-none flex items-center justify-center">
             <div class="text-white text-xl font-semibold font-['Geologica'] text-center">Fondo de Acción Urgente</div>
           </div>
-          <div class="w-72 h-64 bg-lime-200/40 rounded-[20px] rounded-t-none p-4 flex flex-col">
+          <div class="w-full sm:w-72 h-auto sm:h-64 bg-lime-200/40 rounded-[20px] rounded-t-none p-4 flex flex-col">
             <p class="text-stone-600 text-base font-normal font-['Geologica'] leading-5">Fondo para América Latina y el Caribe hispanohablante, apoyando el trabajo de personas defensoras y sus movimientos desde una perspectiva feminista.</p>
-            <div class="mt-auto pt-2.5 flex justify-center">
+            <div class="mt-4 sm:mt-auto pt-2.5 flex justify-center">
               <a href="https://www.fondoaccionurgente.org.co" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-cafemedio rounded-[34.60px] inline-flex justify-center items-center gap-3">
                 <span class="text-white text-sm font-black font-['Geologica'] uppercase">revisar sitio web</span>
               </a>
@@ -182,8 +179,8 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
   <!-- Título Organizaciones por país -->
   <section class="mt-12 md:mt-16 flex justify-center">
     <div class="text-center">
-      <div class="text-stone-600 text-5xl md:text-5xl font-medium font-['Geologica'] leading-10">Organizaciones</div>
-      <div class="text-amber-600 text-7xl md:text-7xl font-extrabold font-['Geologica'] uppercase leading-[88.56px]">POR PAÍS</div>
+      <div class="text-stone-600 text-3xl md:text-5xl font-medium font-['Geologica'] leading-tight md:leading-10">Organizaciones</div>
+      <div class="text-amber-600 text-4xl md:text-7xl font-extrabold font-['Geologica'] uppercase leading-tight md:leading-[88.56px]">POR PAÍS</div>
     </div>
   </section>
 
@@ -206,25 +203,25 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
       <div x-show="selectedPais !== null" x-transition class="mt-8 pb-16">
         <template x-for="pais in paises" :key="pais.id">
           <div x-show="selectedPais === pais.id">
-            <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-12">
               <!-- Columna izquierda -->
               <div class="w-full md:w-[40%]">
-                <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6">
+                <div class="w-full text-stone-600 text-lg md:text-xl font-black font-['Geologica'] leading-6">
                   <span class="bg-amarillo p-1 rounded-md" x-text="pais.organizacionLabel"></span>
                 </div>
-                <div class="text-cafemedio text-6xl md:text-7xl font-black font-['Geologica'] uppercase leading-[77.49px] mt-4" x-text="pais.nombre"></div>
-                <p class="text-stone-600 text-lg font-normal font-['Geologica'] leading-6 mt-4">Estas organizaciones trabajan a nivel nacional y territorial, y pueden orientar, acompañar o apoyar según cada caso.</p>
+                <div class="text-cafemedio text-4xl md:text-7xl font-black font-['Geologica'] uppercase leading-tight md:leading-[77.49px] mt-4" x-text="pais.nombre"></div>
+                <p class="text-stone-600 text-base md:text-lg font-normal font-['Geologica'] leading-5 md:leading-6 mt-4">Estas organizaciones trabajan a nivel nacional y territorial, y pueden orientar, acompañar o apoyar según cada caso.</p>
               </div>
 
               <!-- Columna derecha -->
               <div class="w-full md:w-[60%]">
-                <div class="bg-amber-50 rounded-xl p-6">
+                <div class="bg-lime-200/40 rounded-xl p-4 md:p-6">
                   <template x-for="org in pais.organizaciones" :key="org.nombre">
-                    <div class="mb-6 last:mb-0">
-                      <h4 class="text-cafeoscuro text-xl font-bold font-['Geologica'] uppercase leading-6 mb-2" x-text="org.nombre"></h4>
-                      <p class="text-stone-600 text-base font-normal font-['Geologica'] leading-5 mb-2" x-text="org.descripcion"></p>
-                      <a :href="org.link" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-base font-normal font-['Geologica'] underline" x-text="org.linkTexto"></a>
-                      <p x-show="org.nota" class="text-stone-600 text-sm font-normal font-['Geologica'] leading-5 mt-2 italic" x-text="org.nota"></p>
+                    <div class="mb-4 md:mb-6 last:mb-0">
+                      <h4 class="text-cafeoscuro text-lg md:text-xl font-bold font-['Geologica'] uppercase leading-5 md:leading-6 mb-2" x-text="org.nombre"></h4>
+                      <p class="text-stone-600 text-sm md:text-base font-normal font-['Geologica'] leading-5 mb-2" x-text="org.descripcion"></p>
+                      <a :href="org.link" target="_blank" rel="noopener noreferrer" class="text-cafemedio text-sm md:text-base font-normal font-['Geologica'] underline block break-all" x-text="org.linkTexto"></a>
+                      <p x-show="org.nota" class="text-stone-600 text-xs md:text-sm font-normal font-['Geologica'] leading-5 mt-2 italic" x-text="org.nota"></p>
                     </div>
                   </template>
                 </div>
@@ -246,10 +243,10 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
   <!-- Texto final -->
   <section class="mt-12 md:mt-16 flex justify-center pb-16 md:pb-32">
     <div class="text-center">
-      <div class="text-stone-600 text-5xl md:text-5xl font-medium font-['Geologica'] leading-10">¿Organización que trabaja a nivel</div>
-      <div class="text-amber-600 text-7xl md:text-7xl font-extrabold font-['Geologica'] uppercase leading-[89.69px]">REGIONAL O GLOBAL?</div>
-      <div class="mt-8">
-        <a href="mailto:ayudadefensores@ciudadaniai.org" class="inline-block px-8 py-4 bg-verde text-white text-xl font-bold font-['Geologica'] uppercase rounded-full hover:bg-cafemedio transition">
+      <div class="text-stone-600 text-xl md:text-5xl font-medium font-['Geologica'] leading-tight md:leading-10">¿Organización que trabaja a nivel</div>
+      <div class="text-amber-600 text-2xl md:text-7xl font-extrabold font-['Geologica'] uppercase leading-tight md:leading-[89.69px]">REGIONAL O GLOBAL?</div>
+      <div class="mt-4 md:mt-8">
+        <a href="mailto:ayudadefensores@ciudadaniai.org" class="inline-block px-6 md:px-8 py-3 md:py-4 bg-verde text-white text-base md:text-xl font-bold font-['Geologica'] uppercase rounded-full hover:bg-cafemedio transition">
           Contáctanos
         </a>
       </div>
