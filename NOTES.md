@@ -1,31 +1,59 @@
-La página apoyo.astro está construida con htmx. Cuando se hace click en un botón de país se despliega el archivo de ese país respectivo sin salir de la página.
-La estructura de cada país será la siguiente:
+Página Acompañamiento 
+acompanamiento.astro  
 
-- Dos columnas de 30% / 70% aprox. separadas con un espacio de 20 px aprox.
+- Organizaciones que trabajan a nivel
+regional o global
 
-Ejemplo de estructura de página apoyo.astro con México:
+- cuatro cajas con texto (cebederas verde oscuro, fondo verde claro y botones)
 
-- Columna izquierda: 
-  <div data-layer="Apoyo Estatal en:" class="ApoyoEstatalEn w-48 h-4 text-center justify-center text-stone-600 text-xl font-black font-['Geologica'] leading-6">Apoyo Estatal en:</div>
-<div data-layer="México" class="MXico w-96 h-24 justify-start text-amber-600 text-7xl font-black font-['Geologica'] uppercase leading-[77.49px]">México</div>
-  <div data-layer="Mecanismos de" class="MecanismosDe w-96 h-14 justify-start text-stone-600 text-2xl font-medium font-['Geologica'] leading-7">Mecanismos de</div>
-  <div data-layer="protección" class="ProtecciN text-center justify-start text-stone-500 text-4xl font-extrabold font-['Geologica'] uppercase leading-10">protección</div>
-  <div data-layer="Favorite" class="Favorite size-9 relative">
-    <div data-layer="Vector 15" class="Vector15 w-8 h-7 left-[1.46px] top-[1.46px] absolute outline outline-[3.17px] outline-offset-[-1.58px] outline-stone-500"></div><div data-layer="Personas defensoras de derechos humanos" class="PersonasDefensorasDeDerechosHumanos w-60 h-16 justify-start text-stone-500 text-lg font-bold font-['Geologica'] leading-6">Personas defensoras de derechos humanos</div>
-    </div>
-    <div data-layer="Favorite" class="Favorite size-9 relative">
-    <div data-layer="Vector 15" class="Vector15 w-8 h-7 left-[1.46px] top-[1.46px] absolute outline outline-[3.17px] outline-offset-[-1.58px] outline-stone-500"></div><div data-layer="Periodistas" class="Periodistas w-36 h-7 justify-start text-stone-500 text-lg font-bold font-['Geologica'] leading-6">Periodistas</div>
-</div>
-  <div data-layer="¿Cómo activar el" class="CMoActivarEl w-96 h-14 justify-start text-stone-600 text-2xl font-medium font-['Geologica'] leading-7">¿Cómo activar el</div>
-  <div data-layer="mecanismo?" class="Mecanismo text-center justify-start text-stone-500 text-4xl font-extrabold font-['Geologica'] uppercase leading-10">mecanismo?</div>
-  <div data-layer="Texto explicativo o de bajada a la pregunta que complemente." class="TextoExplicativoODeBajadaALaPreguntaQueComplemente w-72 justify-start text-stone-600 text-lg font-normal font-['Geologica'] leading-6">Texto explicativo o de bajada a la pregunta que complemente.</div>
+- flecha vertical 
 
-- Columna derecha:
-<div data-layer="Texto explicativo que presente estos datos de teléfono, correo y dirección." class="TextoExplicativoQuePresenteEstosDatosDeTelFonoCorreoYDirecciN w-[786px] justify-start text-stone-600 text-lg font-black font-['Geologica'] leading-6">Texto explicativo  que presente estos datos de teléfono, correo y dirección.</div>
-  <div data-layer="Teléfono: 01 800 800 40 50 llamada sin costo 01 55 5209 88 00 ext. 30863" class="TelFono018008004050LlamadaSinCosto015552098800Ext30863 w-96 h-20 justify-start"><span class="text-amber-600 text-lg font-black font-['Geologica'] leading-6">Teléfono: <br/></span><span class="text-stone-600 text-lg font-normal font-['Geologica'] leading-6">01 800 800 40 50 llamada sin costo<br/>01 55 5209 88 00 ext. 30863</span></div>
-  <div data-layer="Correo: mecanismo@segob.gob.mx" class="CorreoMecanismoSegobGobMx w-96 h-11 justify-start"><span class="text-amber-600 text-lg font-black font-['Geologica'] leading-6">Correo:</span><span class="text-amber-600 text-lg font-normal font-['Geologica'] leading-6"> <br/></span><span class="text-stone-600 text-lg font-normal font-['Geologica'] underline leading-6">mecanismo@segob.gob.mx</span></div>
-  <div data-layer="Dirección: Calle Dinamarca número 84, piso 7, colonia Juárez, Delegación Cuauhtémoc, Ciudad de México. C. P. 06600." class="DirecciNCalleDinamarcaNMero84Piso7ColoniaJuRezDelegaciNCuauhtMocCiudadDeMXicoCP06600 w-[784px] h-20 justify-start"><span class="text-amber-600 text-lg font-black font-['Geologica'] leading-6">Dirección:<br/></span><span class="text-stone-600 text-lg font-normal font-['Geologica'] leading-6">Calle Dinamarca número 84, piso 7, colonia Juárez, Delegación Cuauhtémoc, Ciudad de México. C. P. 06600.</span></div>
-  <img data-layer="mapa 1" class="Mapa1 w-[783px] h-80" src="https://placehold.co/783x352" />
+- Organizaciones
+POR PAÍS
+
+- Barra de botones para seleccionar países igual que la de la página apoyo.astro, sólo que acá los países son Brasil, Chile y Colombia.
+
+- Cuando se hace click en un botón de país, se despliega el contenido del país abajo en dos columnas (40/60):
 
 
-:izquierdaLos archivos de países están formados por dos estructuras, una superior que tiene dos columnas con la información del país y una inferior que ahora está formada por desplegables con la información específica de los elementos de cada país. La sección inferior de los archivos de países, por ejemplo mexico.astro,  
+En la columna izquierda va:
+
+- Organizaciones en: (con texto cafeoscuro y fondo span cafemedio con bordes round)
+- Nombre del país (Título en cafemedio grande)
+- este texto, que es el mismo para los tres países:
+Estas organizaciones trabajan a nivel nacional y territorial, y pueden orientar, acompañar o apoyar según cada caso.
+
+En la columna derecha va:
+
+- La información del país en texto cafeoscuro y en un recuadro verde muy claro bg-lime-200/40
+  - el nombre de la institución en uppercase y negrita
+
+
+
+Información de los países:
+
+### Brasil
+Organizaciones de sociedad civil 
+Justiça Global: Actúa desde 1999 en defensa de los derechos humanos. 
+Sitio web.(https://www.global.org.br/es/pagina-de-inicio/)
+Terra de Direitos: actúa en la defensa, promoción y efectividad de derechos humanos , especialmente económicos, culturales, sociales y ambientales. 
+Sitio web.(https://terradedireitos.org.br/es/)
+
+
+### Chile 
+Organizaciones de sociedad civil 
+Escazú Ahora: Trabaja para promover y fiscalizar la implementación plena, efectiva y ambiciosa del Acuerdo de Escazú en Chile y Latinoamérica. 
+Más información.(https://www.escazuahorachile.cl/)
+
+
+### Colombia 
+Organizaciones de sociedad civil 
+Somos defensores: Espacio conformado por varias ONG de derechos humanos (Asociación MINGA, Benposta Nación de Muchachos y la Comisión Colombiana de Juristas) para prevenir agresiones de personas defensoras de derechos humanos
+Sitio web (https://somosdefensores.org/nosotros/)
+No llevan causas legales, pero acompañan en procesos de relocalización temporal, monitoreo de agresiones, atención psicosocial. 
+
+
+
+
+
+
