@@ -1,35 +1,3 @@
-Página Acompañamiento 
-acompanamiento.astro  
-
-- Organizaciones que trabajan a nivel
-regional o global
-
-- cuatro cajas con texto (cebederas verde oscuro, fondo verde claro y botones)
-
-- flecha vertical 
-
-- Organizaciones
-POR PAÍS
-
-- Barra de botones para seleccionar países igual que la de la página apoyo.astro, sólo que acá los países son Brasil, Chile y Colombia.
-
-- Cuando se hace click en un botón de país, se despliega el contenido del país abajo en dos columnas (40/60):
-
-
-En la columna izquierda va:
-
-- Organizaciones en: (con texto cafeoscuro y fondo span cafemedio con bordes round)
-- Nombre del país (Título en cafemedio grande)
-- este texto, que es el mismo para los tres países:
-Estas organizaciones trabajan a nivel nacional y territorial, y pueden orientar, acompañar o apoyar según cada caso.
-
-En la columna derecha va:
-
-- La información del país en texto cafeoscuro y en un recuadro verde muy claro bg-lime-200/40
-  - el nombre de la institución en uppercase y negrita
-
-
-
 Información de los países:
 
 ### Brasil
