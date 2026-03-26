@@ -187,12 +187,12 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
   <!-- Selector de países -->
   <section class="mt-8 md:mt-12 flex justify-center" x-data="acompanamiento">
     <div class="container max-w-8xl mx-auto px-4">
-      <div class="flex flex-wrap gap-4 justify-center py-6">
+      <div class="flex flex-wrap gap-2 sm:gap-4 justify-center py-4 sm:py-6">
         <template x-for="pais in paises" :key="pais.id">
           <button
             @click="seleccionarPais(pais.id)"
             :class="selectedPais === pais.id ? 'bg-verde' : 'bg-cafeoscuro hover:bg-cafemedio'"
-            class="px-6 py-3 text-white font-medium rounded-full transition cursor-pointer text-lg"
+            class="px-3 sm:px-6 py-2 sm:py-3 text-white font-medium rounded-full transition cursor-pointer text-sm sm:text-lg"
           >
             <span x-text="pais.nombre"></span>
           </button>
