@@ -10,7 +10,7 @@ import Layout from '../../layouts/Layout.astro';
 import shieldIcon from '../../assets/shield.webp';
 import heartIcon from '../../assets/heart.webp';
 import logoFCIVerde from '../../assets/fci-logo-verde.webp';
-import { t } from '../../i18n/utils.ts';
+import { getLocaleFromUrl, t, getLocaleUrl } from '../../i18n/utils';
 
 const { lang } = Astro.params;
 const locale = lang === 'pt' ? 'pt' : 'es';
@@ -26,9 +26,9 @@ const locale = lang === 'pt' ? 'pt' : 'es';
       <p class="text-[16px] md:text-[24px] font-semibold text-verde">{t('index.banner.subtitulo2', locale)}</p>
     </div>
     <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 opacity-0 animate-slide-in-delay">
-      <button class="uppercase bg-cafeoscuro text-white font-bold text-xs md:text-[18px] px-2 py-2 md:px-6 md:py-4 rounded-full hover:bg-cafeclaro transition">
+      <a href={getLocaleUrl('/apoyo', locale)}><button class="uppercase bg-cafeoscuro text-white font-bold text-xs md:text-[18px] px-2 py-2 md:px-6 md:py-4 rounded-full hover:bg-cafeclaro transition">
         {t('index.banner.boton', locale)} 
-      </button>
+      </button></a>
     </div>
   </section>
 
@@ -138,7 +138,7 @@ const locale = lang === 'pt' ? 'pt' : 'es';
           </div>
         </div>
         <button class="uppercase bg-cafeoscuro text-white font-bold text-xs md:text-[18px] px-2 py-2 md:px-6 md:py-4 rounded-full hover:bg-cafeclaro transition flex justify-center items-center">
-          <a href={`/${lang}/apoyo`}>{t('index.escazu.boton', locale)}</a>
+          <a href={`/${lang}/escazu`}>{t('index.escazu.boton', locale)}</a>
         </button>
       </div>
     </div>
@@ -168,9 +168,9 @@ const locale = lang === 'pt' ? 'pt' : 'es';
           <div class="mt-2 flex justify-center md:justify-start">
             <img src={logoFCIVerde.src} alt="Logo FCI" class="w-40 md:w-70 h-auto" />
           </div>
-          <button class="w-full mt-4 uppercase bg-cafeoscuro text-white font-bold text-xs md:text-[18px] px-2 py-2 md:px-6 md:py-4 rounded-full hover:bg-cafeclaro transition flex justify-center md:justify-start items-center md:w-auto">
+          <a href="https://ciudadaniai.org" target="_blank"><button class="w-full mt-4 uppercase bg-cafeoscuro text-white font-bold text-xs md:text-[18px] px-2 py-2 md:px-6 md:py-4 rounded-full hover:bg-cafeclaro transition flex justify-center md:justify-start items-center md:w-auto">
             {t('index.quien.boton', locale)} 
-          </button>
+          </button></a>
         </div>
         <div class="w-full md:w-2/3 mt-4 md:mt-0">
           <div class="md:ml-4 bg-amber-300/10 rounded-lg p-6 text-center md:text-left" id="quienes-somos-content">

@@ -46,7 +46,7 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/es/';
             <span class="text-cafeoscuro">|</span>
             <a href={ptUrl} class={`text-sm ${locale === 'pt' ? 'text-cafemedio font-bold' : 'text-cafeoscuro hover:text-cafemedio'}`}>PT</a>
           </div>
-          <button class="bg-cafemedio text-white text-sm font-bold px-4 py-2 rounded-full hover:bg-cafeoscuro transition delay-150 duration-300 ease-in-out">{t('nav.protegete', locale)}</button>
+          <button class="bg-cafemedio text-white text-sm font-bold px-4 py-2 rounded-full hover:bg-cafeoscuro transition delay-150 duration-300 ease-in-out">{t('nav.autoproteccion', locale)}</button>
         </div>
       </div>
       <div class="hidden w-full items-center md:gap-12 font-semibold
@@ -64,7 +64,7 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/es/';
           <!-- <span class="text-cafeoscuro">|</span> -->
           <!-- <a href={ptUrl} class={`text-sm ${locale === 'pt' ? 'text-cafemedio font-bold' : 'text-cafeoscuro hover:text-cafemedio'}`}>PT</a> -->
         </div>
-        <button class="bg-cafemedio text-white text-sm font-bold px-4 py-2 rounded-full hover:bg-cafeoscuro transition delay-150 duration-300 ease-in-out">{t('nav.protegete', locale)}</button>
+        <a href={getLocaleUrl('/autoproteccion', locale)}><button class="bg-cafemedio text-white text-sm font-bold px-4 py-2 rounded-full hover:bg-cafeoscuro transition delay-150 duration-300 ease-in-out uppercase">{t('nav.autoproteccion', locale)}</button></a>
       </div>
       <button class="text-gray-500 w-10 h-10 relative focus:outline-none bg-white
         md:hidden
