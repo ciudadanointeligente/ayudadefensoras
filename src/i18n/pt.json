@@ -75,25 +75,37 @@
       "titulo": "MÉXICO",
       "descripcion": "Conta com um mecanismo de proteção para pessoas defensoras de direitos humanos e jornalistas.",
       "direccion": "Endereço: Calle Dinamarca número 84, andar 7, colônia Juárez, Delegación Cuauhtémoc, Cidade do México. C. P. 06600.",
-      "telefono": "Telefone: 01 800 800 40 50 chamada sem custo - 01 55 5209 88 00 ramal 30863",
+      "telefone": "Telefone: 01 800 800 40 50 chamada sem custo - 01 55 5209 88 00 ramal 30863",
       "correo": "E-mail: mecanismo@segob.gob.mx",
-      "accionEstatal": "Ação estatal e entidades de apoio no México:"
+      "accionEstatal": "Ação estatal e entidades de apoio no México:",
+      "escazu": "Assinado em 27 de setembro de 2018. Ratificado em 22 de janeiro de 2021."
     },
     "chile": {
-      "titulo": "Chile",
-      "descripcion": "Informações de recursos e apoio para defensores ambientais no Chile.",
-      "item1": "Organizações locais de apoio",
-      "item2": "Protocolos de proteção",
-      "item3": "Ferramentas de autoproteção",
-      "item4": "Redes de acompanhamento"
+      "titulo": "CHILE",
+      "descripcion": "Conta com o Protocolo de Proteção a Pessoas Defensoras de Direitos Humanos.",
+      "direccion": "Endereço: Ministério da Justiça e Direitos Humanos",
+      "telefono": "Telefone: Protocolo de Proteção",
+      "correo": "E-mail: protocolodefensores@minjusticia.cl",
+      "accionEstatal": "Ação estatal e entidades de apoio no Chile:",
+      "escazu": "Ratificado em 13 de junho de 2022. Chile é Estado parte desde 11 de setembro de 2022."
     },
     "argentina": {
-      "titulo": "Argentina",
-      "descripcion": "Informações de recursos e apoio para defensores ambientais na Argentina.",
-      "item1": "Organizações locais de apoio",
-      "item2": "Protocolos de proteção",
-      "item3": "Ferramentas de autoproteção",
-      "item4": "Redes de acompanhamento"
+      "titulo": "ARGENTINA",
+      "descripcion": "Conta com um mecanismo de recebimento de denúncias e assistência a vítimas de violações de DD.HH",
+      "direccion": "Endereço: Secretaria de Direitos Humanos da Nação",
+      "telefone": "Telefone: (+54) (11) 5300-4000 Interno 76840",
+      "correo": "E-mail: dngv@derhuman.jus.gov.ar",
+      "accionEstatal": "Ação estatal e entidades de apoio na Argentina:",
+      "escazu": "Assinado em 27 de setembro de 2018. Ratificado em 22 de janeiro de 2021"
+    },
+    "brasil": {
+      "titulo": "BRASIL",
+      "descripcion": "Conta com o Programa de Proteção aos Defensores de Direitos Humanos, Comunicadores e Ambientalistas (PPDDH)",
+      "direccion": "Endereço: Secretaria Nacional de Direitos Humanos, Brasília",
+      "telefone": "Telefone: Gov.br (é necessário ter conta)",
+      "correo": "E-mail: defensores@mdh.gov.br",
+      "accionEstatal": "Ação estatal e entidades de apoio no Brasil:",
+      "escazu": "Assinado em 27 de setembro de 2018, mas não foi ratificado"
     },
     "bolivia": {
       "titulo": "Bolívia",
@@ -104,12 +116,31 @@
       "item4": "Redes de acompanhamento"
     },
     "peru": {
-      "titulo": "Peru",
-      "descripcion": "Informações de recursos e apoio para defensores ambientais no Peru.",
-      "item1": "Organizações locais de apoio",
-      "item2": "Protocolos de proteção",
-      "item3": "Ferramentas de autoproteção",
-      "item4": "Redes de acompanhamento"
+      "titulo": "PERU",
+      "descripcion": "Conta com o Procedimento de alerta precoce frente a agressões sofridas por pessoas defensoras de Direitos Humanos.",
+      "direccion": "Endereço: Viceministerio de Direitos Humanos e Acesso à Justiça",
+      "telefone": "Telefone: 948447562",
+      "correo": "E-mail: mecanismodefensoresddhh@minjus.gob.pe",
+      "accionEstatal": "Ação estatal e entidades de apoio no Peru:",
+      "escazu": "Assinado em 27 de setembro de 2018. O acordo não foi ratificado."
+    },
+    "colombia": {
+      "titulo": "COLÔMBIA",
+      "descripcion": "Conta com o Protocolo de proteção da Unidade Nacional de Proteção.",
+      "direccion": "Endereço: Calle 72 No. 16-43, Bogotá D.C.",
+      "telefone": "Telefone: (601) 3147300",
+      "correo": "E-mail: correoweb@defensoria.gov.co",
+      "accionEstatal": "Ação estatal e entidades de apoio na Colômbia:",
+      "escazu": "Assinado em 11 de dezembro de 2019 e ratificado em 25 de setembro de 2024."
+    },
+    "uruguai": {
+      "titulo": "URUGUAI",
+      "descripcion": "Conta com a Instituição Nacional de Direitos Humanos e o Defensor do Povo.",
+      "direccion": "Endereço: Bulevar Artigas 1532, Montevideo",
+      "telefone": "Telefone: 1948, opção 2",
+      "correo": "E-mail: denuncias@inddhh.gub.uy",
+      "accionEstatal": "Ação estatal e entidades de apoio no Uruguai:",
+      "escazu": "Assinou o acordo em 27 de setembro de 2018. Ratificado em 26 de setembro de 2019."
     }
   }
 }

@@ -7,41 +7,12 @@ const locale = url.includes('/pt/') ? 'pt' : 'es';
 
 const ubicaciones = [
   {
-    id: 'lima',
-    titulo: 'Lima',
+    id: 'ministerio-justicia',
+    titulo: 'Ministerio de Justicia y Derechos Humanos',
     contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Defensoría del Pueblo:</p>
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Guía práctica para la protección de personas defensoras ambientales.</p>
       <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Dirección: Jr. Ucayali #388, Lima Centro.<br/>
-        Teléfono:<br/>
-        +51 1 311-0300<br/>
-        Correo: <a href="mailto:informes@defensoria.gob.pe" class="text-white underline">informes@defensoria.gob.pe</a>
-      </p>
-    `
-  },
-  {
-    id: 'arequipa',
-    titulo: 'Arequipa',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Defensoría del Pueblo - Oficina Regional Arequipa:</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Dirección: Calle La Merced #108, Cercado de Arequipa.<br/>
-        Teléfono:<br/>
-        +51 54 215-300<br/>
-        Correo: <a href="mailto:arequipa@defensoria.gob.pe" class="text-white underline">arequipa@defensoria.gob.pe</a>
-      </p>
-    `
-  },
-  {
-    id: 'cusco',
-    titulo: 'Cusco',
-    contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Defensoría del Pueblo - Oficina Regional Cusco:</p>
-      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Dirección: Av. Tullumayo #463, Cusco.<br/>
-        Teléfono:<br/>
-        +51 84 240-300<br/>
-        Correo: <a href="mailto:cusco@defensoria.gob.pe" class="text-white underline">cusco@defensoria.gob.pe</a>
+        Más información: <a href="https://cdn.www.gob.pe/uploads/document/file/3265462/Gu%C3%ADa%20pr%C3%A1ctica%20protecci%C3%B3n%20personas%20defensoras%20ambientales.pdf" target="_blank" rel="noopener noreferrer" class="text-white underline">Descargar guía</a>
       </p>
     `
   }
@@ -53,9 +24,12 @@ const ubicaciones = [
     <h2 class="text-5xl md:text-7xl text-right font-extrabold text-cafemedio">{t('pais.peru.titulo', locale)}</h2>
     <div class="md:ml-12 md:mr-22 text-cafeoscuro text-[16px]">
       <p class="mb-2 font-bold">{t('pais.peru.descripcion', locale)}</p>
+      <p class="mb-2">{t('pais.peru.direccion', locale)}</p>
+      <p class="mb-2">{t('pais.peru.telefono', locale)}</p>
+      <p>{t('pais.peru.correo', locale)}</p>
     </div>
   </div>
-  <p class="text-center mt-10 uppercase text-cafeoscuro font-bold">Acción estatal y entidades de apoyo en Perú:</p>
+  <p class="text-center mt-10 uppercase text-cafeoscuro font-bold">{t('pais.peru.accionEstatal', locale)}</p>
   
   <div class="container max-w-4xl mx-auto px-4 mt-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">

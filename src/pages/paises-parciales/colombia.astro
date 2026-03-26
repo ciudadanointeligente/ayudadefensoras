@@ -1,0 +1,56 @@
+---
+import { t } from '../../i18n/utils.ts';
+import Accordion from '../../components/Accordion.astro';
+
+const url = Astro.url.pathname;
+const locale = url.includes('/pt/') ? 'pt' : 'es';
+
+const ubicaciones = [
+  {
+    id: 'ministerio-ambiente',
+    titulo: 'Ministerio de Ambiente y Desarrollo Sostenible',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Medidas de protección para liderazgos ambientales.</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Más información: <a href="https://www.minambiente.gov.co/lideres-ambientales/identificacion-y-proteccion/" target="_blank" rel="noopener noreferrer" class="text-white underline">https://www.minambiente.gov.co/lideres-ambientales/identificacion-y-proteccion/</a>
+      </p>
+    `
+  },
+  {
+    id: 'defensoria-pueblo',
+    titulo: 'Defensoría del Pueblo',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Protege y promociona los derechos humanos en Colombia.</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Sitio web: <a href="https://www.defensoria.gov.co/en/web/guest" target="_blank" rel="noopener noreferrer" class="text-white underline">https://www.defensoria.gov.co/en/web/guest</a><br/>
+        Directorio: <a href="https://www.defensoria.gov.co/en/directorio-de-dependencias" target="_blank" rel="noopener noreferrer" class="text-white underline">https://www.defensoria.gov.co/en/directorio-de-dependencias</a>
+      </p>
+    `
+  }
+];
+---
+
+<div class="p-6 bg-white">
+  <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-2 p-12">
+    <h2 class="text-5xl md:text-7xl text-right font-extrabold text-cafemedio">{t('pais.colombia.titulo', locale)}</h2>
+    <div class="md:ml-12 md:mr-22 text-cafeoscuro text-[16px]">
+      <p class="mb-2 font-bold">{t('pais.colombia.descripcion', locale)}</p>
+      <p class="mb-2">{t('pais.colombia.direccion', locale)}</p>
+      <p class="mb-2">{t('pais.colombia.telefono', locale)}</p>
+      <p>{t('pais.colombia.correo', locale)}</p>
+    </div>
+  </div>
+  <p class="text-center mt-10 uppercase text-cafeoscuro font-bold">{t('pais.colombia.accionEstatal', locale)}</p>
+  
+  <div class="container max-w-4xl mx-auto px-4 mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+      {ubicaciones.map((ubicacion) => (
+        <Accordion 
+          id={ubicacion.id}
+          title={ubicacion.titulo}
+          content={ubicacion.contenido}
+        />
+      ))}
+    </div>
+  </div>
+</div>

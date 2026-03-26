@@ -14,12 +14,13 @@ const locale = lang === 'pt' ? 'pt' : 'es';
 const homeUrl = locale === 'pt' ? '/pt/' : '/';
 
 const paises = [
-  { id: 'chile', nombre: locale === 'pt' ? 'Chile' : 'Chile' },
   { id: 'mexico', nombre: locale === 'pt' ? 'México' : 'México' },
+  { id: 'colombia', nombre: locale === 'pt' ? 'Colômbia' : 'Colombia' },
   { id: 'brasil', nombre: locale === 'pt' ? 'Brasil' : 'Brasil' },
   { id: 'argentina', nombre: locale === 'pt' ? 'Argentina' : 'Argentina' },
-  { id: 'bolivia', nombre: locale === 'pt' ? 'Bolívia' : 'Bolivia' },
-  { id: 'peru', nombre: locale === 'pt' ? 'Peru' : 'Perú' }
+  { id: 'peru', nombre: locale === 'pt' ? 'Peru' : 'Perú' },
+  { id: 'uruguay', nombre: locale === 'pt' ? 'Uruguai' : 'Uruguay' },
+  { id: 'chile', nombre: locale === 'pt' ? 'Chile' : 'Chile' }
 ];
 ---
 
@@ -43,7 +44,7 @@ const paises = [
   </section>
 
   <!-- Buscador por países -->
-  <div class="container max-w-6xl mx-auto px-4 min-h-[400px] overflow-x-hidden">
+  <div class="container max-w-8xl mx-auto px-4 min-h-[400px] overflow-x-hidden">
      <div class="flex flex-wrap gap-4 justify-center py-8">
      <div class="text-cafeoscuro text-lg font-semibold mt-1">{t('apoyo.seleccionarPais', locale)}</div> {paises.map((pais) => (
       <button

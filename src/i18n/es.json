@@ -77,23 +77,35 @@
       "direccion": "Dirección: Calle Dinamarca número 84, piso 7, colonia Juárez, Delegación Cuauhtémoc, Ciudad de México. C. P. 06600.",
       "telefono": "Teléfono: 01 800 800 40 50 llamada sin costo - 01 55 5209 88 00 ext. 30863",
       "correo": "Correo: mecanismo@segob.gob.mx",
-      "accionEstatal": "Acción estatal y entidades de apoyo en México:"
+      "accionEstatal": "Acción estatal y entidades de apoyo en México:",
+      "escazu": "Firmado el 27 de septiembre de 2018. Ratificado el 22 de enero de 2021."
     },
     "chile": {
-      "titulo": "Chile",
-      "descripcion": "Información de recursos y apoyo para defensores ambientales en Chile.",
-      "item1": "Organizaciones locales de apoyo",
-      "item2": "Protocolos de protección",
-      "item3": "Herramientas de autoprotección",
-      "item4": "Redes de acompañamiento"
+      "titulo": "CHILE",
+      "descripcion": "Cuenta con el Protocolo de Protección a Personas Defensoras de Derechos Humanos.",
+      "direccion": "Dirección: Ministerio de Justicia y Derechos Humanos",
+      "telefono": "Teléfono: Protocolo de Protección",
+      "correo": "Correo: protocolodefensores@minjusticia.cl",
+      "accionEstatal": "Acción estatal y entidades de apoyo en Chile:",
+      "escazu": "Ratificado el 13 de junio de 2022. Chile es Estado parte desde el 11 de septiembre de 2022."
     },
     "argentina": {
-      "titulo": "Argentina",
-      "descripcion": "Información de recursos y apoyo para defensores ambientales en Argentina.",
-      "item1": "Organizaciones locales de apoyo",
-      "item2": "Protocolos de protección",
-      "item3": "Herramientas de autoprotección",
-      "item4": "Redes de acompañamiento"
+      "titulo": "ARGENTINA",
+      "descripcion": "Cuenta con un mecanismo de recepción de denuncias y asistencia a víctimas de violaciones de DD.HH",
+      "direccion": "Dirección: Secretaría de Derechos Humanos de la Nación",
+      "telefono": "Teléfono: (+54) (11) 5300-4000 Interno 76840",
+      "correo": "Correo: dngv@derhuman.jus.gov.ar",
+      "accionEstatal": "Acción estatal y entidades de apoyo en Argentina:",
+      "escazu": "Firmado el 27 de septiembre de 2018. Ratificado el 22 de enero de 2021"
+    },
+    "brasil": {
+      "titulo": "BRASIL",
+      "descripcion": "Cuenta con el Programa de Protección aos Defensores de Direitos Humanos, Comunicadores e Ambientalistas (PPDDH)",
+      "direccion": "Dirección: Secretaría Nacional de Derechos Humanos, Brasilia",
+      "telefono": "Teléfono: Gov.br (es necesario tener cuenta)",
+      "correo": "Correo: defensores@mdh.gov.br",
+      "accionEstatal": "Acción estatal y entidades de apoyo en Brasil:",
+      "escazu": "Firmado el 27 de septiembre de 2018, pero no ha sido ratificado"
     },
     "bolivia": {
       "titulo": "Bolivia",
@@ -104,12 +116,31 @@
       "item4": "Redes de acompañamiento"
     },
     "peru": {
-      "titulo": "Perú",
-      "descripcion": "Información de recursos y apoyo para defensores ambientales en Perú.",
-      "item1": "Organizaciones locales de apoyo",
-      "item2": "Protocolos de protección",
-      "item3": "Herramientas de autoprotección",
-      "item4": "Redes de acompañamiento"
+      "titulo": "PERÚ",
+      "descripcion": "Cuenta con el Procedimiento de alerta temprana frente agresiones sufridas por personas defensoras de Derechos Humanos.",
+      "direccion": "Dirección: Viceministerio de Derechos Humanos y Acceso a la Justicia",
+      "telefono": "Teléfono: 948447562",
+      "correo": "Correo: mecanismodefensoresddhh@minjus.gob.pe",
+      "accionEstatal": "Acción estatal y entidades de apoyo en Perú:",
+      "escazu": "Firmado el 27 de septiembre de 2018. No se ha ratificado el acuerdo."
+    },
+    "colombia": {
+      "titulo": "COLOMBIA",
+      "descripcion": "Cuenta con el Protocolo de protección de la Unidad Nacional de Protección.",
+      "direccion": "Dirección: Calle 72 No. 16-43, Bogotá D.C.",
+      "telefono": "Teléfono: (601) 3147300",
+      "correo": "Correo: correoweb@defensoria.gov.co",
+      "accionEstatal": "Acción estatal y entidades de apoyo en Colombia:",
+      "escazu": "Firmado el 11 de diciembre de 2019 y ratificado el 25 de septiembre de 2024."
+    },
+    "uruguay": {
+      "titulo": "URUGUAY",
+      "descripcion": "Cuenta con la Institución Nacional de Derechos Humanos y el Defensor del Pueblo.",
+      "direccion": "Dirección: Bulevar Artigas 1532, Montevideo",
+      "telefono": "Teléfono: 1948, opción 2",
+      "correo": "Correo: denuncias@inddhh.gub.uy",
+      "accionEstatal": "Acción estatal y entidades de apoyo en Uruguay:",
+      "escazu": "Firmó el acuerdo el 27 de septiembre de 2018. Ratificado el 26 de septiembre de 2019."
     }
   }
 }

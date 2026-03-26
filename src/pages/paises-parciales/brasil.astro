@@ -7,41 +7,114 @@ const locale = url.includes('/pt/') ? 'pt' : 'es';
 
 const ubicaciones = [
   {
-    id: 'santiago',
-    titulo: 'Región Metropolitana (Santiago)',
+    id: 'bahia',
+    titulo: 'Bahia',
     contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Defensoría de los Derechos de la Niñez:</p>
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Justicia, Derechos Humanos y Desarrollo Social</p>
       <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Dirección: Morandé #360, Santiago Centro.<br/>
-        Teléfono:<br/>
-        +56 2 2617 4000<br/>
-        Correo: <a href="mailto:contacto@defensorianinez.cl" class="text-white underline">contacto@defensorianinez.cl</a>
+        Teléfono: (71) 3115-6577, (71) 3115-0315, (71) 3115-6674, (71) 3115-6184<br/>
+        Correo: <a href="mailto:cabinet@sjdhds.ba.gov.br" class="text-white underline">cabinet@sjdhds.ba.gov.br</a>
       </p>
     `
   },
   {
-    id: 'valparaiso',
-    titulo: 'Región de Valparaíso',
+    id: 'maranhao',
+    titulo: 'Maranhão',
     contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Instituto Nacional de Derechos Humanos:</p>
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaria de Estado dos Direitos Humanos e Participação Popular</p>
       <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Dirección: Manuel Montt #750, Valparaíso.<br/>
-        Teléfono:<br/>
-        +56 32 250 3700<br/>
-        Correo: <a href="mailto:indh@indh.cl" class="text-white underline">indh@indh.cl</a>
+        Dirección: Edificio Clodomir Milet, 2.º Piso, Bloque A. Avenida Jerônimo de Albuquerque, S/N. Calhau- São Luís/MA Código Postal: 65074-220<br/>
+        Teléfono: (98) 3210-5330<br/>
+        Correo: <a href="mailto:gabinete.sedihpop@gmail.com" class="text-white underline">gabinete.sedihpop@gmail.com</a>
       </p>
     `
   },
   {
-    id: 'biobio',
-    titulo: 'Región del Biobío (Concepción)',
+    id: 'minas-gerais',
+    titulo: 'Minas Gerais',
     contenido: `
-      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Seremi de Derechos Humanos - Biobío:</p>
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Estado de Desarrollo Social (Sedese)</p>
       <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
-        Dirección: Colo-Colo #280, Concepción.<br/>
-        Teléfono:<br/>
-        +56 41 224 5500<br/>
-        Correo: <a href="mailto:seremi.biobio@minsegpres.gob.cl" class="text-white underline">seremi.biobio@minsegpres.gob.cl</a>
+        Teléfono: (31) 3916-8207, (31) 3916-8210, (31) 3916-8338<br/>
+        Correo: <a href="mailto:cabinetsec@social.mg.gov.br" class="text-white underline">cabinetsec@social.mg.gov.br</a>
+      </p>
+    `
+  },
+  {
+    id: 'paraiba',
+    titulo: 'Paraíba',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Estado de Desarrollo Humano - SEDH</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Teléfono: (83) 3133 4064, (83) 3133 4085, (83) 3133 4081, (83) 3133 4072<br/>
+        Correo: <a href="mailto:asesoriadegabinete@sedh.pb.gov.br" class="text-white underline">asesoriadegabinete@sedh.pb.gov.br</a>, <a href="mailto:ppddh.pb@gmail.com" class="text-white underline">ppddh.pb@gmail.com</a>, <a href="mailto:derechoshumanos.sedh@gmail.com" class="text-white underline">derechoshumanos.sedh@gmail.com</a>
+      </p>
+    `
+  },
+  {
+    id: 'rio-janeiro',
+    titulo: 'Río de Janeiro',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Estado de Desarrollo Social y Derechos Humanos – SEDSDH</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Teléfono: (21) 2334-5540<br/>
+        Correo: <a href="mailto:coordenacaoprotecao.dhrj@gmail.com" class="text-white underline">coordenacaoprotecao.dhrj@gmail.com</a>, <a href="mailto:gabinete.socialrj@sedsdh.rj.gov.br" class="text-white underline">gabinete.socialrj@sedsdh.rj.gov.br</a>
+      </p>
+    `
+  },
+  {
+    id: 'ceara',
+    titulo: 'Ceará',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Protección Social, Justicia, Ciudadanía, Mujer y Derechos Humanos</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Teléfono: (85) 3101-4557<br/>
+        Chat en línea: <a href="https://www.sps.ce.gov.br/2020/07/08/sps-cria-chat-para-facilitar-atendimento-do-cidadao/" target="_blank" rel="noopener noreferrer" class="text-white underline">Más información aquí</a>
+      </p>
+    `
+  },
+  {
+    id: 'mato-grosso',
+    titulo: 'Mato Grosso',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Estado de Asistencia Social y Ciudadanía de Mato Grosso</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: R. C, S/N - Centro Político Administrativo. Cuiabá - MT, 78050-970<br/>
+        Teléfono: (65) 9 9339-9735<br/>
+        Correo: <a href="mailto:ppddh@setasc.mt.gov.br" class="text-white underline">ppddh@setasc.mt.gov.br</a>
+      </p>
+    `
+  },
+  {
+    id: 'amazonas',
+    titulo: 'Amazonas',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Estado de Justicia y Derechos Humanos</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Teléfono: (91) 4009-2722, (91) 4009-2723, (91) 4009-2744, (91) 4009-2700<br/>
+        Correo: <a href="mailto:cabinet@sejudh.pa.gov.br" class="text-white underline">cabinet@sejudh.pa.gov.br</a>
+      </p>
+    `
+  },
+  {
+    id: 'pernambuco',
+    titulo: 'Pernambuco',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Justicia y Derechos Humanos del Estado de Pernambuco - SJDH/PE</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Teléfono: (81) 3182-7625<br/>
+        Contacto: <a href="http://www.sjdh.pe.gov.br/faleconosco" target="_blank" rel="noopener noreferrer" class="text-white underline">http://www.sjdh.pe.gov.br/faleconosco</a>
+      </p>
+    `
+  },
+  {
+    id: 'rio-grande-sul',
+    titulo: 'Río Grande do Sul',
+    contenido: `
+      <p class="text-white text-lg font-bold font-['Geologica'] leading-6 mb-2">Secretaría de Justicia y Sistemas Penales y Socioeducativos</p>
+      <p class="text-white text-lg font-normal font-['Geologica'] leading-6">
+        Dirección: Avenida Borges de Medeiros, 1501. Código Postal: 90119-900 / Porto Alegre - RS<br/>
+        Correo: <a href="mailto:ppddh@calabria.com.br" class="text-white underline">ppddh@calabria.com.br</a>
       </p>
     `
   }
@@ -53,9 +126,12 @@ const ubicaciones = [
     <h2 class="text-5xl md:text-7xl text-right font-extrabold text-cafemedio">{t('pais.brasil.titulo', locale)}</h2>
     <div class="md:ml-12 md:mr-22 text-cafeoscuro text-[16px]">
       <p class="mb-2 font-bold">{t('pais.brasil.descripcion', locale)}</p>
+      <p class="mb-2">{t('pais.brasil.direccion', locale)}</p>
+      <p class="mb-2">{t('pais.brasil.telefono', locale)}</p>
+      <p>{t('pais.brasil.correo', locale)}</p>
     </div>
   </div>
-  <p class="text-center mt-10 uppercase text-cafeoscuro font-bold">{t('pais.brasil.accionEstatal', locale) || 'Acción estatal y entidades de apoyo en Brasil:'}</p>
+  <p class="text-center mt-10 uppercase text-cafeoscuro font-bold">{t('pais.brasil.accionEstatal', locale)}</p>
   
   <div class="container max-w-4xl mx-auto px-4 mt-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
