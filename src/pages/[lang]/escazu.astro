@@ -8,6 +8,7 @@ export function getStaticPaths() {
 
 import Layout from '../../layouts/Layout.astro';
 import { t } from '../../i18n/utils.ts';
+import shieldIcon from '../../assets/shield.webp';
 
 const { lang } = Astro.params;
 const locale = lang === 'pt' ? 'pt' : 'es';
@@ -34,7 +35,7 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
   </section>
 
   <!-- Contenido principal en dos columnas -->
-  <section class="mt-12 md:mt-16 flex justify-center pb-16 md:pb-32">
+  <section class="mt-12 md:mt-16 flex justify-center pb-16 md:pb-22">
     <div class="container max-w-7xl mx-auto px-4">
       <div class="flex flex-col md:flex-row gap-8 md:gap-20">
         <!-- Columna izquierda -->
@@ -56,6 +57,121 @@ const homeUrl = locale === 'pt' ? '/pt/' : '/';
             Uno de sus pilares (Artículo 9) es la <span class="bg-amarillo px-1 rounded font-semibold">protección de las personas defensoras de derechos humanos ambientales</span>. Los Estados parte deben garantizar un entorno seguro para que defensores/as y organizaciones puedan trabajar sin amenazas ni restricciones.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flecha vertical -->
+  <section class="mt-2 md:mt-2 flex justify-center -z-10">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="85" viewBox="0 0 12 85" fill="none">
+      <path d="M5.77342 84.7735L11.5469 79L5.77342 73.2265L-8.35618e-05 79L5.77342 84.7735ZM5.77344 0L4.77344 -2.32254e-07L4.77344 79L5.77342 79L6.77342 79L6.77344 2.32254e-07L6.77344 0Z" fill="#818B3E"/>
+    </svg>
+  </section>
+
+  <!-- Sección Infórmate sobre Escazú -->
+  <section class="mt-12 md:mt-16 flex justify-center">
+    <div class="text-center">
+      <div class="text-stone-600 text-3xl md:text-5xl font-medium font-['Geologica'] leading-tight md:leading-10">Infórmate</div>
+      <div class="text-amber-600 text-4xl md:text-7xl font-extrabold font-['Geologica'] uppercase leading-tight md:leading-[89.69px]">sobre escazú</div>
+      <p class="text-stone-600 text-base md:text-xl font-normal font-['Geologica'] leading-6 mt-4">Encuentra la última información sobre el Acuerdo Escazú a nivel Regional</p>
+    </div>
+  </section>
+
+  <!-- Sección Información Regional -->
+  <section class="mt-12 md:mt-16 flex justify-center pb-16 md:pb-16">
+    <div class="container max-w-6xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row gap-8 md:gap-16">
+        <!-- Columna izquierda -->
+        <div class="w-full md:w-1/3 flex items-center">
+          <h2 class="text-cafeoscuro text-3xl md:text-3xl font-extrabold font-['Geologica'] uppercase">Información regional</h2>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="w-full md:w-2/3 flex flex-col gap-6">
+          <div class="bg-amber-50 rounded-xl p-6">
+            <a href="https://observatoriop10.cepal.org/es" target="_blank"><h3 class="text-cafeoscuro text-xl font-bold font-['Geologica'] mb-2">Observatorio CEPAL P10</h3></a>
+            <p class="text-stone-600 text-base font-normal font-['Geologica']">Plataforma oficial de seguimiento del Acuerdo de Escazú.</p>
+          </div>
+        <div class="bg-amber-50 rounded-xl p-6">
+            <a href="https://escazubarometro.asuntosdelsur.org" target="_blank"><h3 class="text-cafeoscuro text-xl font-bold font-['Geologica'] mb-2">Escazú Barómetro</h3></a>
+            <p class="text-stone-600 text-base font-normal font-['Geologica']">Revisa el avance de tu país en la implementación del Acuerdo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Boletín Democracia Ambiental -->
+  <section class="mt-2 md:mt-2 flex justify-center">
+    <div class="container max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-cafemedio text-2xl md:text-4xl font-extrabold font-['Geologica'] uppercase">Boletín Democracia Ambiental</h2>
+      <p class="text-stone-600 text-base md:text-lg font-normal font-['Geologica'] leading-6 mt-4">
+        Recibe nuestro Boletín con información actualizada sobre avances, alertas, desafíos y oportunidades en torno a la implementación de Escazú en América Latina y el Caribe.
+      </p>
+    </div>
+  </section>
+
+  <!-- Shields de Boletines -->
+  <section class="mt-12 md:mt-12 flex justify-center pb-20 md:pb-36">
+    <div class="container max-w-6xl mx-auto px-4">
+      <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8">
+        
+        <!-- Boletín #1 -->
+        <div class="w-full sm:w-64 bg-amarillo rounded-xl relative mx-auto sm:mx-0 pb-16 pt-4">
+          <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-amarillo border-4 border-amarillo rounded-full flex items-center justify-center">
+            <img src={shieldIcon.src} alt="Shield" class="w-8 h-8" />
+          </div>
+          <div class="mt-10 px-4 text-center">
+            <div class="text-verde text-xl font-extrabold font-['Geologica'] uppercase">Boletín #1</div>
+            <div class="text-stone-600 text-base font-medium font-['Geologica'] mt-2">Septiembre 2024</div>
+          </div>
+          <a href="https://mailchi.mp/ciudadaniai.org/escaz-ahora-avances-y-desafos-en-amrica-latina-y-el-caribe-democraciaambiental?e=1ccfc7436e" target="_blank" rel="noopener noreferrer" class="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-cafemedio rounded-full text-white text-sm font-bold hover:bg-cafeoscuro transition">
+            Ver Boletín
+          </a>
+        </div>
+
+        <!-- Boletín #2 -->
+        <div class="w-full sm:w-64 bg-amarillo rounded-xl relative mx-auto sm:mx-0 pb-16 pt-4">
+          <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-amarillo border-4 border-amarillo rounded-full flex items-center justify-center">
+            <img src={shieldIcon.src} alt="Shield" class="w-8 h-8" />
+          </div>
+          <div class="mt-10 px-4 text-center">
+            <div class="text-verde text-xl font-extrabold font-['Geologica'] uppercase">Boletín #2</div>
+            <div class="text-stone-600 text-base font-medium font-['Geologica'] mt-2">Diciembre 2024</div>
+          </div>
+          <a href="https://mailchi.mp/ciudadaniai.org/escaz-ahora-avances-y-desafos-en-amrica-latina-y-el-caribe-democraciaambiental-10145132" target="_blank" rel="noopener noreferrer" class="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-cafemedio rounded-full text-white text-sm font-bold hover:bg-cafeoscuro transition">
+            Ver Boletín
+          </a>
+        </div>
+
+        <!-- Boletín #3 -->
+        <div class="w-full sm:w-64 bg-amarillo rounded-xl relative mx-auto sm:mx-0 pb-16 pt-4">
+          <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-amarillo border-4 border-amarillo rounded-full flex items-center justify-center">
+            <img src={shieldIcon.src} alt="Shield" class="w-8 h-8" />
+          </div>
+          <div class="mt-10 px-4 text-center">
+            <div class="text-verde text-xl font-extrabold font-['Geologica'] uppercase">Boletín #3</div>
+            <div class="text-stone-600 text-base font-medium font-['Geologica'] mt-2">Julio 2025</div>
+          </div>
+          <a href="https://mailchi.mp/28be9d574231/escaz-ahora-avances-y-desafos-en-amrica-latina-y-el-caribe-democraciaambiental-10147614?e=85ace9da34" target="_blank" rel="noopener noreferrer" class="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-cafemedio rounded-full text-white text-sm font-bold hover:bg-cafeoscuro transition">
+            Ver Boletín
+          </a>
+        </div>
+
+        <!-- Boletín #4 -->
+        <div class="w-full sm:w-64 bg-amarillo rounded-xl relative mx-auto sm:mx-0 pb-16 pt-4">
+          <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-amarillo border-4 border-amarillo rounded-full flex items-center justify-center">
+            <img src={shieldIcon.src} alt="Shield" class="w-8 h-8" />
+          </div>
+          <div class="mt-10 px-4 text-center">
+            <div class="text-verde text-xl font-extrabold font-['Geologica'] uppercase">Boletín #4</div>
+            <div class="text-stone-600 text-base font-medium font-['Geologica'] mt-2">Noviembre 2025</div>
+          </div>
+          <a href="https://mailchi.mp/3a1c590aada1/escaz-ahora-avances-y-desafos-en-amrica-latina-y-el-caribe-democraciaambiental-10149433?e=85ace9da34" target="_blank" rel="noopener noreferrer" class="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-cafemedio rounded-full text-white text-sm font-bold hover:bg-cafeoscuro transition">
+            Ver Boletín
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
