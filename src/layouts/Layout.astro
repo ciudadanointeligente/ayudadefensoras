@@ -23,22 +23,31 @@ const lang = locale === 'pt' ? 'pt-BR' : 'es';
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script is:inline>
-      // Re-init Alpine after view transitions
-      document.addEventListener('astro:after-swap', function() {
-        if (window.Alpine) {
-          Alpine.initTree(document.body);
-        }
-      });
-      
-      // Handle htmx swaps
-      document.body.addEventListener('htmx:afterSwap', function(event) {
-        if (window.Alpine) {
-          Alpine.initTree(event.detail.target);
-        }
-      });
+    // Re-init Alpine after view transitions
+    document.addEventListener('astro:after-swap', function() {
+      if (window.Alpine) {
+        Alpine.initTree(document.body);
+      }
+    });
+
+    // Handle htmx swaps
+    document.body.addEventListener('htmx:afterSwap', function(event) {
+      if (window.Alpine) {
+        Alpine.initTree(event.detail.target);
+      }
+    });
     </script>
     <title>Ayuda Defensores - {title} - Ciudadanía Inteligente</title>
     <ClientRouter />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1MYJR1MLQF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1MYJR1MLQF');
+    </script>
   </head>
   <body class="overflow-x-hidden antialiased">
     <Banner />

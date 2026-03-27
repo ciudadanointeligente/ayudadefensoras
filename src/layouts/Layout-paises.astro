@@ -21,16 +21,25 @@ const lang = locale === 'pt' ? 'pt-BR' : 'es';
     <script src="/scripts/htmx.js" is:inline></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script>
-      // @ts-ignore - Alpine está disponible en globalThis cuando se carga desde CDN
-      document.body.addEventListener('htmx:load', function(event) {
+    // @ts-ignore - Alpine está disponible en globalThis cuando se carga desde CDN
+    document.body.addEventListener('htmx:load', function(event) {
+      // @ts-ignore
+      if (window.Alpine) {
         // @ts-ignore
-        if (window.Alpine) {
-          // @ts-ignore
-          Alpine.initTree(event.detail.elt);
-        }
-      });
+        Alpine.initTree(event.detail.elt);
+      }
+    });
     </script>
     <title>Ayuda Defensores - {title} - Ciudadanía Inteligente</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1MYJR1MLQF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1MYJR1MLQF');
+    </script>
   </head>
   <body class="overflow-x-hidden antialiased">
     <Banner />
