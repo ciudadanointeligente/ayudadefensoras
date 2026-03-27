@@ -7,7 +7,7 @@ const locale = url.includes('/pt/') ? 'pt' : 'es';
 const ubicaciones = [
   { id: 'ministerio', titulo: 'Ministerio de Justicia y Derechos Humanos', contenido: `
     <div class="w-full text-stone-600 text-xl font-black font-['Geologica'] leading-6 mb-2"><span class="bg-amarillo p-1 rounded-md">Responsable del Protocolo de Protección</span></div>
-    <p class="text-stone-600 text-lg font-normal font-['Geologica'] mb-3">Si necesitas más información sobre el protocolo, contacta al Ministerio de Justicia y Derechos Humanos.</p>
+    <p class="text-stone-600 text-lg font-normal font-['Geologica'] mb-3">Si necesitas más información sobre el protocolo, puedes visitar la página d</p>
   ` }
 ];
 
@@ -38,7 +38,7 @@ const ubicacionesJson = JSON.stringify(ubicaciones);
 
     <div class="w-full md:w-[62%] flex flex-col">
       <div class="w-full text-stone-600 text-lg font-black font-['Geologica'] leading-6 mb-4">
-        Para activar el mecanismo de protección, puedes comunicarte directamente a los siguientes canales de contacto:
+Para activar el protocolo descarga el formulario de solicitud <a href="https://www.derechoshumanos.gob.cl/protocolo-de-proteccion-a-las-personas-defensoras-de-derechos-humanos/"><span class="text-cafemedio">formulario de solicitud</span></a> y envíala al correo: protocolodefensores@minjusticia.cl
       </div>
       <div class="w-full">
         <span class="text-cafemedio text-lg font-black font-['Geologica'] leading-6">Correo:</span>
@@ -47,36 +47,36 @@ const ubicacionesJson = JSON.stringify(ubicaciones);
     </div>
   </div>
 
-  <div class="mt-8">
-    <div class="text-center">
-      <div class="w-full h-14 text-cafeoscuro text-2xl font-medium font-['Geologica'] leading-7">Acción estatal y entidades</div>
-      <div class="w-full text-verde text-4xl font-extrabold font-['Geologica'] uppercase leading-10">de apoyo en Chile</div>
-      <div class="w-full h-4 text-cafeoscuro text-lg font-semibold font-['Geologica'] uppercase leading-6 mt-4">seleccionar institución:</div>
-    </div>
-
-    <div class="container max-w-full mx-auto px-4 mt-8">
-      <div class="flex flex-wrap gap-4 justify-center py-6 mb-8">
-
-        <template x-for="ubicacion in ubicaciones" :key="ubicacion.id">
-          <button
-            @click="selectedId = ubicacion.id"
-            :class="selectedId === ubicacion.id ? 'bg-verde' : 'bg-cafeoscuro hover:bg-cafemedio'"
-            class="px-2 sm:px-4 py-2 text-white font-medium rounded-full transition cursor-pointer text-sm sm:text-base"
-          >
-            <span x-text="ubicacion.titulo"></span>
-          </button>
-        </template>
-      </div>
-      
-      <template x-for="ubicacion in ubicaciones" :key="ubicacion.id">
-        <div x-show="selectedId === ubicacion.id" x-transition class="mt-4 bg-white rounded-xl p-6 border border-verde/20">
-          <div class="text-amber-600 text-3xl font-black font-['Geologica'] uppercase mb-4" x-text="ubicacion.titulo"></div>
-          <div class="w-full md:w-[62%]" x-html="ubicacion.contenido"></div>
-        </div>
-      </template>
-    </div>
-  </div>
-</div>
+<!--   <div class="mt-8"> -->
+<!--     <div class="text-center"> -->
+<!--       <div class="w-full h-14 text-cafeoscuro text-2xl font-medium font-['Geologica'] leading-7">Acción estatal y entidades</div> -->
+<!--       <div class="w-full text-verde text-4xl font-extrabold font-['Geologica'] uppercase leading-10">de apoyo en Chile</div> -->
+<!--       <div class="w-full h-4 text-cafeoscuro text-lg font-semibold font-['Geologica'] uppercase leading-6 mt-4">seleccionar institución:</div> -->
+<!--     </div> -->
+<!---->
+<!--     <div class="container max-w-full mx-auto px-4 mt-8"> -->
+<!--       <div class="flex flex-wrap gap-4 justify-center py-6 mb-8"> -->
+<!---->
+<!--         <template x-for="ubicacion in ubicaciones" :key="ubicacion.id"> -->
+<!--           <button -->
+<!--             @click="selectedId = ubicacion.id" -->
+<!--             :class="selectedId === ubicacion.id ? 'bg-verde' : 'bg-cafeoscuro hover:bg-cafemedio'" -->
+<!--             class="px-2 sm:px-4 py-2 text-white font-medium rounded-full transition cursor-pointer text-sm sm:text-base" -->
+<!--           > -->
+<!--             <span x-text="ubicacion.titulo"></span> -->
+<!--           </button> -->
+<!--         </template> -->
+<!--       </div> -->
+<!---->
+<!--       <template x-for="ubicacion in ubicaciones" :key="ubicacion.id"> -->
+<!--         <div x-show="selectedId === ubicacion.id" x-transition class="mt-4 bg-white rounded-xl p-6 border border-verde/20"> -->
+<!--           <div class="text-amber-600 text-3xl font-black font-['Geologica'] uppercase mb-4" x-text="ubicacion.titulo"></div> -->
+<!--           <div class="w-full md:w-[62%]" x-html="ubicacion.contenido"></div> -->
+<!--         </div> -->
+<!--       </template> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </div> -->
 
 <style>
 [x-cloak] { display: none !important; }
