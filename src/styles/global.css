@@ -2,6 +2,12 @@
 @import "tw-animate-css";
 @plugin "@tailwindcss/forms";
 
+@layer base {
+  html {
+    font-family: 'Geologica Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
 @plugin "daisyui" {
   themes: light --default, light --preferslight;
 }
