@@ -16,7 +16,7 @@ const { title, subtitle, content, id } = Astro.props;
     :class="open ? 'bg-verde/40' : 'bg-verde/20 hover:bg-verde/30'"
   >
     <div class="w-full flex justify-between items-center">
-      <span class="text-white text-base font-black font-['Geologica'] leading-5 p-3">{title}</span>
+      <span class="text-white text-base font-black  leading-5 p-3">{title}</span>
       <svg 
         class="w-6 h-6 text-white transition-transform duration-300" 
         :class="open ? 'rotate-180' : ''"
@@ -28,7 +28,7 @@ const { title, subtitle, content, id } = Astro.props;
       </svg>
     </div>
     {subtitle && (
-      <span class="text-stone-600 text-lg font-bold font-['Geologica'] leading-6 mt-1">{subtitle}</span>
+      <span class="text-stone-600 text-lg font-bold  leading-6 mt-1">{subtitle}</span>
     )}
   </button>
   
@@ -37,7 +37,7 @@ const { title, subtitle, content, id } = Astro.props;
     x-collapse
     class="px-4 pb-4 overflow-hidden"
   >
-    <div class="text-stone-600 text-lg font-normal font-['Geologica'] leading-6" set:html={content} />
+    <div class="text-stone-600 text-lg font-normal  leading-6" set:html={content} />
   </div>
 </div>
 
